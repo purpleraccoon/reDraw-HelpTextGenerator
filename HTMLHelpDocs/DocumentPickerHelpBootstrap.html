@@ -1146,6 +1146,13 @@
         }
     </style>
 
+    <!--<style type="text/css">
+        .kbd2 {
+          color: #00e;
+          background-color: #f00;
+        }
+    </style>-->
+
     <script>
         $(function () {
             $('#accordion').on('shown.bs.collapse', '.panel-default', function (e) {
@@ -1181,7 +1188,7 @@
                         <li>Also see the help option on the Whiteboard Canvas (the screen after opening a document that you can draw on) for help on using it.</li>
                     </ul>
 
-                    <p>What&#39;s new in Version 3.0:</p>
+                    <p style="background-color: whitesmoke;">What&#39;s new in Version 3.0:</p>
 
                     <ul>
                         <li>
@@ -1213,21 +1220,21 @@
                     <ul>
                         <li>
                             <p>
-                                Added a button in navigation bar (between + button for new slide and settings gear button) to expand the slide canvas. It hides the left bar and the the buttons/sliders above the canvas. Press it again to shrink the slide canvas and restore
+                                Added a button in navigation bar (between <code>+</code> button for new slide and settings <code>gear</code> button) to expand the slide canvas. It hides the left bar and the the buttons/sliders above the canvas. Press it again to shrink the slide canvas and restore
                                 those views.
                             </p>
                         </li>
                         <li>
-                            <p>Pressing command-/ on an externally connected keyboard will create a text drawable below the bottom item on the current slide no matter what drawing tool is currently selected.</p>
+                            <p>Pressing <kbd>command /</kbd> on an externally connected keyboard will create a text drawable below the bottom item on the current slide no matter what drawing tool is currently selected.</p>
                         </li>
                         <li>
                             <p>Added Previous/Next slide buttons on either side of slide number button. Pressing the slide number displays a view for picking any slide.</p>
                         </li>
                         <li>
-                            <p>When drawing with the Pen tool and the Shift button is On, lines that are nearly horizontal or nearly vertical are changed to horizontal or vertical lines.</p>
+                            <p>When drawing with the Pen tool and the <code>Shift</code> button is On, lines that are nearly horizontal or nearly vertical are changed to horizontal or vertical lines.</p>
                         </li>
                         <li>
-                            <p>Long press the Select button to select all the objects on a slide.</p>
+                            <p>Long press the <code>Select</code> button to select all the objects on a slide.</p>
                         </li>
                     </ul>
                 </div>
@@ -1255,11 +1262,11 @@
             <div id="creating-a-new-document" class="panel-collapse collapse">
                 <div class="panel-body">
                     <p>
-                        If you have navigated to a folder where you can create reDraw documents such as On My iPad -&gt; reDraw -&gt; Documents or any subfolder of it or one of the Cloud providers such as as iCloud Drive, you should see a + button with the subtitle Create
-                        Document that you can press. You should also see a + button at the top right the left of the Help button. Note that you cannot store documents in the sandboxed folder of other apps listed in the On My iPad section. Within the On My iPad section,
+                        If you have navigated to a folder where you can create reDraw documents such as On My iPad -&gt; reDraw -&gt; Documents or any subfolder of it or one of the Cloud providers such as as iCloud Drive, you should see a <code>+</code> button with the subtitle Create
+                        Document that you can press. You should also see a <code>+</code> button at the top right the left of the <code>Help</code> button. Note that you cannot store documents in the sandboxed folder of other apps listed in the On My iPad section. Within the On My iPad section,
                         only the reDraw folder and its subfolders may be used.
                     </p>
-                    <p>After pressing the + button you can choose the canvas size for the document and the app will be created in the currently select folder with the name &quot;Note (current date)&quot;. See <a href="#renaming-and-moving-documents">Renaming and moving documents</a>        for to rename documents or how to move them to different folders.</p>
+                    <p>After pressing the <code>+</code> button you can choose the canvas size for the document and the app will be created in the currently select folder with the name &quot;Note (current date)&quot;. See <a href="#renaming-and-moving-documents">Renaming and moving documents</a>        for to rename documents or how to move them to different folders.</p>
                 </div>
             </div>
         </div>
@@ -1270,7 +1277,7 @@
             </div>
             <div id="creating-a-new-folder" class="panel-collapse collapse">
                 <div class="panel-body">
-                    <p>Touch a blank area of the document picker between existing documents and swipe down to see the folder icon with a plus button to create a new folder. You can also change the order of how the documents are sorted (by date, name, etc.). See
+                    <p>Touch a blank area of the document picker between existing documents and swipe down to see the folder icon with a <code>plus</code> button to create a new folder. You can also change the order of how the documents are sorted (by date, name, etc.). See
                     <a href="#renaming-and-moving-documents">Renaming and moving documents</a>
                     for to rename documents or how to move them to different folders.</p>
                 </div>
@@ -1284,7 +1291,7 @@
             <div id="deleting-a-document-or-folder" class="panel-collapse collapse">
                 <div class="panel-body">
                     <p>
-                        Press the Select button near the top right of the screen. Now tap on files and folders to select the files and/or folders you want to delete. A second tap unselects a selected file/folder. Press the Delete button at the bottom right corner of the
+                        Press the <code>Select</code> button near the top right of the screen. Now tap on files and folders to select the files and/or folders you want to delete. A second tap unselects a selected file/folder. Press the <code>Delete</code> button at the bottom right corner of the
                         screen. Important note: deleting a folder deletes all the files in the folder. You may also long press an individual file/folder to display a list of options for that file including Delete.
                     </p>
                 </div>
@@ -1298,8 +1305,8 @@
             <div id="renaming-and-moving-documents" class="panel-collapse collapse">
                 <div class="panel-body">
                     <p>
-                        To rename a file, long press the file and choose the Rename option. To move a number of files to a different folder. Press the Select button near the top right of the screen. Now tap on files and folders to select the files and/or folders you want
-                        to move. A second tap unselects a selected file/folder. After you selected the files/folders you want to move, press the Move button at the bottom and now select the folder to which you want to move them. Note, when moving from the On My iPad
+                        To rename a file, long press the file and choose the Rename option. To move a number of files to a different folder. Press the <code>Select</code> button near the top right of the screen. Now tap on files and folders to select the files and/or folders you want
+                        to move. A second tap unselects a selected file/folder. After you selected the files/folders you want to move, press the <code>Move</code> button at the bottom and now select the folder to which you want to move them. Note, when moving from the On My iPad
                         section to iCloud drive (and perhaps other cloud providers), it appears to copy them instead of moving them.
                     </p>
                 </div>
@@ -1313,7 +1320,7 @@
             <div id="sharing-a-redraw-document" class="panel-collapse collapse">
                 <div class="panel-body">
                     <p>
-                        To share a single reDraw document with another reDraw user, long press the document and then choose Share and choose the method to send it to them (e.g., email). To share multiple files, press the Select button near the top right of the screen. Now
+                        To share a single reDraw document with another reDraw user, long press the document and then choose Share and choose the method to send it to them (e.g., email). To share multiple files, press the <code>Select</code> button near the top right of the screen. Now
                         tap on files and folders to select the files and/or folders you want to move. A second tap unselects a selected file/folder. After you selected the files/folders you want to share, press the Share option at the bottom and choose the method to
                         send it to them.
                     </p>
