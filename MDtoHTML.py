@@ -18,6 +18,13 @@ def mdToHTML(mdFileName):
 
     # TODO: generate HTML file
 
+    lineCount = 0
+
+    # iterate over each line of the Mark Down file
+    for line in mdFile:
+        lineCount += 1
+        print(lineCount, line, file=htmlFile)
+
     # close files
     mdFile.close()
     htmlFile.close()
