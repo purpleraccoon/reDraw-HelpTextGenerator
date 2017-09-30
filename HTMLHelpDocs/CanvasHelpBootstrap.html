@@ -1,0 +1,1672 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>reDraw Canvas Help</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            padding: 20px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        a,
+        abbr,
+        acronym,
+        address,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        img,
+        q,
+        s,
+        samp,
+        small,
+        strike,
+        strong,
+        sub,
+        sup,
+        tt,
+        var,
+        dd,
+        dl,
+        dt,
+        li,
+        ol,
+        ul,
+        fieldset,
+        form,
+        label,
+        legend,
+        button,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-weight: normal;
+            font-style: normal;
+            font-size: 100%;
+            line-height: 1;
+            font-family: inherit;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        ol,
+        ul {
+            list-style: none;
+        }
+
+        q:before,
+        q:after,
+        blockquote:before,
+        blockquote:after {
+            content: "";
+        }
+
+        html {
+            overflow-y: scroll;
+            font-size: 130%;
+            -webkit-text-size-adjust: 130%;
+            -ms-text-size-adjust: 130%;
+        }
+
+        a:focus {
+            outline: thin dotted;
+        }
+
+        a:hover,
+        a:active {
+            outline: 0;
+        }
+
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        nav,
+        section {
+            display: block;
+        }
+
+        audio,
+        canvas,
+        video {
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+        }
+
+            audio:not([controls]) {
+                display: none;
+            }
+
+        sub,
+        sup {
+            font-size: 75%;
+            line-height: 0;
+            position: relative;
+            vertical-align: baseline;
+        }
+
+        sup {
+            top: -0.5em;
+        }
+
+        sub {
+            bottom: -0.25em;
+        }
+
+        img {
+            border: 0;
+            -ms-interpolation-mode: bicubic;
+        }
+
+        button,
+        input,
+        select,
+        textarea {
+            font-size: 100%;
+            margin: 0;
+            vertical-align: baseline;
+            *vertical-align: middle;
+        }
+
+        button,
+        input {
+            line-height: normal;
+            *overflow: visible;
+        }
+
+            button::-moz-focus-inner,
+            input::-moz-focus-inner {
+                border: 0;
+                padding: 0;
+            }
+
+            button,
+            input[type="button"],
+            input[type="reset"],
+            input[type="submit"] {
+                cursor: pointer;
+                -webkit-appearance: button;
+            }
+
+            input[type="search"] {
+                -webkit-appearance: textfield;
+                -webkit-box-sizing: content-box;
+                -moz-box-sizing: content-box;
+                box-sizing: content-box;
+            }
+
+                input[type="search"]::-webkit-search-decoration {
+                    -webkit-appearance: none;
+                }
+
+        textarea {
+            overflow: auto;
+            vertical-align: top;
+        }
+
+        html,
+        body {
+            background-color: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 13px;
+            font-weight: normal;
+            line-height: 18px;
+            color: #404040;
+        }
+
+        .container {
+            width: 940px;
+            margin-left: auto;
+            margin-right: auto;
+            zoom: 1;
+        }
+
+            .container:before,
+            .container:after {
+                display: table;
+                content: "";
+                zoom: 1;
+                *display: inline;
+            }
+
+            .container:after {
+                clear: both;
+            }
+
+        .container-fluid {
+            position: relative;
+            min-width: 940px;
+            padding-left: 20px;
+            padding-right: 20px;
+            zoom: 1;
+        }
+
+            .container-fluid:before,
+            .container-fluid:after {
+                display: table;
+                content: "";
+                zoom: 1;
+                *display: inline;
+            }
+
+            .container-fluid:after {
+                clear: both;
+            }
+
+            .container-fluid > .sidebar {
+                float: left;
+                width: 220px;
+            }
+
+            .container-fluid > .content {
+                margin-left: 240px;
+            }
+
+        a {
+            color: #0069d6;
+            text-decoration: none;
+            line-height: inherit;
+            font-weight: inherit;
+        }
+
+            a:hover {
+                color: #00438a;
+                text-decoration: underline;
+            }
+
+        .pull-right {
+            float: right;
+        }
+
+        .pull-left {
+            float: left;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .show {
+            display: block;
+        }
+
+        .row {
+            zoom: 1;
+            margin-left: -20px;
+        }
+
+            .row:before,
+            .row:after {
+                display: table;
+                content: "";
+                zoom: 1;
+                *display: inline;
+            }
+
+            .row:after {
+                clear: both;
+            }
+
+        p {
+            font-size: 13px;
+            font-weight: normal;
+            line-height: 18px;
+            margin-bottom: 9px;
+        }
+
+            p small {
+                font-size: 11px;
+                color: #bfbfbf;
+            }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: bold;
+            color: #404040;
+        }
+
+            h1 small,
+            h2 small,
+            h3 small,
+            h4 small,
+            h5 small,
+            h6 small {
+                color: #bfbfbf;
+            }
+
+        h1 {
+            margin-bottom: 18px;
+            font-size: 30px;
+            line-height: 36px;
+        }
+
+            h1 small {
+                font-size: 18px;
+            }
+
+        h2 {
+            font-size: 24px;
+            line-height: 36px;
+        }
+
+            h2 small {
+                font-size: 14px;
+            }
+
+        h3,
+        h4,
+        h5,
+        h6 {
+            line-height: 36px;
+        }
+
+        h3 {
+            font-size: 18px;
+        }
+
+            h3 small {
+                font-size: 14px;
+            }
+
+        h4 {
+            font-size: 16px;
+        }
+
+            h4 small {
+                font-size: 12px;
+            }
+
+        h5 {
+            font-size: 14px;
+        }
+
+        h6 {
+            font-size: 13px;
+            color: #bfbfbf;
+            text-transform: uppercase;
+        }
+
+        ul,
+        ol {
+            margin: 0 0 18px 25px;
+        }
+
+            ul ul,
+            ul ol,
+            ol ol,
+            ol ul {
+                margin-bottom: 0;
+            }
+
+        ul {
+            list-style: disc;
+        }
+
+        ol {
+            list-style: decimal;
+        }
+
+        li {
+            line-height: 18px;
+            color: #808080;
+        }
+
+        ul.unstyled {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        dl {
+            margin-bottom: 18px;
+        }
+
+            dl dt,
+            dl dd {
+                line-height: 18px;
+            }
+
+            dl dt {
+                font-weight: bold;
+            }
+
+            dl dd {
+                margin-left: 9px;
+            }
+
+        hr {
+            margin: 20px 0 19px;
+            border: 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        strong {
+            font-style: inherit;
+            font-weight: bold;
+        }
+
+        em {
+            font-style: italic;
+            font-weight: inherit;
+            line-height: inherit;
+        }
+
+        .muted {
+            color: #bfbfbf;
+        }
+
+        blockquote {
+            margin-bottom: 18px;
+            border-left: 5px solid #eee;
+            padding-left: 15px;
+        }
+
+            blockquote p {
+                font-size: 14px;
+                font-weight: 300;
+                line-height: 18px;
+                margin-bottom: 0;
+            }
+
+            blockquote small {
+                display: block;
+                font-size: 12px;
+                font-weight: 300;
+                line-height: 18px;
+                color: #bfbfbf;
+            }
+
+                blockquote small:before {
+                    content: '\2014 \00A0';
+                }
+
+        address {
+            display: block;
+            line-height: 18px;
+            margin-bottom: 18px;
+        }
+
+        code,
+        pre {
+            padding: 0 3px 2px;
+            font-family: Monaco, Andale Mono, Courier New, monospace;
+            font-size: 12px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+        }
+
+        code {
+            padding: 1px 3px;
+        }
+
+        pre {
+            background-color: #f5f5f5;
+            display: block;
+            padding: 8.5px;
+            margin: 0 0 18px;
+            line-height: 18px;
+            font-size: 12px;
+            border: 1px solid #ccc;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            white-space: pre;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        form {
+            margin-bottom: 18px;
+        }
+
+        fieldset {
+            margin-bottom: 18px;
+            padding-top: 18px;
+        }
+
+            fieldset legend {
+                display: block;
+                padding-left: 150px;
+                font-size: 19.5px;
+                line-height: 1;
+                color: #404040;
+                *padding: 0 0 5px 145px;
+                *line-height: 1.5;
+            }
+
+        form .clearfix {
+            margin-bottom: 18px;
+            zoom: 1;
+        }
+
+            form .clearfix:before,
+            form .clearfix:after {
+                display: table;
+                content: "";
+                zoom: 1;
+                *display: inline;
+            }
+
+            form .clearfix:after {
+                clear: both;
+            }
+
+        label,
+        input,
+        select,
+        textarea {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 13px;
+            font-weight: normal;
+            line-height: normal;
+        }
+
+        label {
+            padding-top: 6px;
+            font-size: 13px;
+            line-height: 18px;
+            float: left;
+            width: 130px;
+            text-align: right;
+            color: #404040;
+        }
+
+        form .input {
+            margin-left: 150px;
+        }
+
+        input[type=checkbox],
+        input[type=radio] {
+            cursor: pointer;
+        }
+
+        input,
+        textarea,
+        select,
+        .uneditable-input {
+            display: inline-block;
+            width: 210px;
+            height: 18px;
+            padding: 4px;
+            font-size: 13px;
+            line-height: 18px;
+            color: #808080;
+            border: 1px solid #ccc;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+        }
+
+            input[type=checkbox],
+            input[type=radio] {
+                width: auto;
+                height: auto;
+                padding: 0;
+                margin: 3px 0;
+                *margin-top: 0;
+                line-height: normal;
+                border: none;
+            }
+
+            input[type=file] {
+                background-color: #ffffff;
+                padding: initial;
+                border: initial;
+                line-height: initial;
+                -webkit-box-shadow: none;
+                -moz-box-shadow: none;
+                box-shadow: none;
+            }
+
+            input[type=button],
+            input[type=reset],
+            input[type=submit] {
+                width: auto;
+                height: auto;
+            }
+
+            select,
+            input[type=file] {
+                height: 27px;
+                line-height: 27px;
+                *margin-top: 4px;
+            }
+
+                select[multiple] {
+                    height: inherit;
+                }
+
+        textarea {
+            height: auto;
+        }
+
+        .uneditable-input {
+            background-color: #ffffff;
+            display: block;
+            border-color: #eee;
+            -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.025);
+            -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.025);
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.025);
+            cursor: not-allowed;
+        }
+
+        :-moz-placeholder {
+            color: #bfbfbf;
+        }
+
+        ::-webkit-input-placeholder {
+            color: #bfbfbf;
+        }
+
+        input,
+        textarea {
+            -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+            -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+            -ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+            -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+            transition: border linear 0.2s, box-shadow linear 0.2s;
+            -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+            -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+            input:focus,
+            textarea:focus {
+                outline: 0;
+                border-color: rgba(82, 168, 236, 0.8);
+                -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+                -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+                box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+            }
+
+            input[type=file]:focus,
+            input[type=checkbox]:focus,
+            select:focus {
+                -webkit-box-shadow: none;
+                -moz-box-shadow: none;
+                box-shadow: none;
+                outline: 1px dotted #666;
+            }
+
+        form div.clearfix.error {
+            background: #fae5e3;
+            padding: 10px 0;
+            margin: -10px 0 10px;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+        }
+
+            form div.clearfix.error > label,
+            form div.clearfix.error span.help-inline,
+            form div.clearfix.error span.help-block {
+                color: #9d261d;
+            }
+
+            form div.clearfix.error input,
+            form div.clearfix.error textarea {
+                border-color: #c87872;
+                -webkit-box-shadow: 0 0 3px rgba(171, 41, 32, 0.25);
+                -moz-box-shadow: 0 0 3px rgba(171, 41, 32, 0.25);
+                box-shadow: 0 0 3px rgba(171, 41, 32, 0.25);
+            }
+
+                form div.clearfix.error input:focus,
+                form div.clearfix.error textarea:focus {
+                    border-color: #b9554d;
+                    -webkit-box-shadow: 0 0 6px rgba(171, 41, 32, 0.5);
+                    -moz-box-shadow: 0 0 6px rgba(171, 41, 32, 0.5);
+                    box-shadow: 0 0 6px rgba(171, 41, 32, 0.5);
+                }
+
+            form div.clearfix.error .input-prepend span.add-on,
+            form div.clearfix.error .input-append span.add-on {
+                background: #f4c8c5;
+                border-color: #c87872;
+                color: #b9554d;
+            }
+
+        table {
+            width: 100%;
+            margin-bottom: 18px;
+            padding: 0;
+            border-collapse: separate;
+            *border-collapse: collapse;
+            font-size: 13px;
+            border: 1px solid #ddd;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+        }
+
+            table th,
+            table td {
+                padding: 10px 10px 9px;
+                line-height: 18px;
+                text-align: left;
+            }
+
+            table th {
+                padding-top: 9px;
+                font-weight: bold;
+                vertical-align: middle;
+                border-bottom: 1px solid #ddd;
+            }
+
+            table td {
+                vertical-align: top;
+            }
+
+                table th + th,
+                table td + td {
+                    border-left: 1px solid #ddd;
+                }
+
+            table tr + tr td {
+                border-top: 1px solid #ddd;
+            }
+
+            table tbody tr:first-child td:first-child {
+                -webkit-border-radius: 4px 0 0 0;
+                -moz-border-radius: 4px 0 0 0;
+                border-radius: 4px 0 0 0;
+            }
+
+            table tbody tr:first-child td:last-child {
+                -webkit-border-radius: 0 4px 0 0;
+                -moz-border-radius: 0 4px 0 0;
+                border-radius: 0 4px 0 0;
+            }
+
+            table tbody tr:last-child td:first-child {
+                -webkit-border-radius: 0 0 0 4px;
+                -moz-border-radius: 0 0 0 4px;
+                border-radius: 0 0 0 4px;
+            }
+
+            table tbody tr:last-child td:last-child {
+                -webkit-border-radius: 0 0 4px 0;
+                -moz-border-radius: 0 0 4px 0;
+                border-radius: 0 0 4px 0;
+            }
+
+        .zebra-striped tbody tr:nth-child(odd) td {
+            background-color: #f9f9f9;
+        }
+
+        .zebra-striped tbody tr:hover td {
+            background-color: #f5f5f5;
+        }
+
+        .zebra-striped .header {
+            cursor: pointer;
+        }
+
+            .zebra-striped .header:after {
+                content: "";
+                float: right;
+                margin-top: 7px;
+                border-width: 0 4px 4px;
+                border-style: solid;
+                border-color: #000 transparent;
+                visibility: hidden;
+            }
+
+            .zebra-striped .header:hover:after {
+                visibility: visible;
+            }
+
+        footer {
+            margin-top: 17px;
+            padding-top: 17px;
+            border-top: 1px solid #eee;
+        }
+
+        .page-header {
+            margin-bottom: 17px;
+            border-bottom: 1px solid #ddd;
+            -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+            -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+            box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+        }
+
+            .page-header h1 {
+                margin-bottom: 8px;
+            }
+
+        .close {
+            float: right;
+            color: #000000;
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 13.5px;
+            text-shadow: 0 1px 0 #ffffff;
+            filter: alpha(opacity=20);
+            -khtml-opacity: 0.2;
+            -moz-opacity: 0.2;
+            opacity: 0.2;
+        }
+
+            .close:hover {
+                color: #000000;
+                text-decoration: none;
+                filter: alpha(opacity=40);
+                -khtml-opacity: 0.4;
+                -moz-opacity: 0.4;
+                opacity: 0.4;
+            }
+
+        pre {
+            padding: 0;
+            margin: 10px 0px 10px;
+            overflow: auto;
+            /*--If the Code exceeds the width, a scrolling is available--*/
+            overflow-Y: hidden;
+            /*--Hides vertical scroll created by IE--*/
+        }
+
+            pre code {
+                margin: 5px;
+                /*--Left Margin--*/
+                padding: 0px;
+                display: block;
+                line-height: 18px;
+            }
+
+        .center {
+            text-align: center;
+        }
+
+        .left {
+            text-align: left;
+        }
+
+        .right {
+            text-align: right;
+        }
+    </style>
+    <style type="text/css">
+        /* nabbed from bundle_common.css */
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            color: black;
+        }
+
+        body {
+            font: 13.34px helvetica, arial, freesans, clean, sans-serif;
+        }
+
+        table {
+            font-size: inherit;
+            font: 100%;
+        }
+
+        input[type=text],
+        input[type=password],
+        input[type=image],
+        textarea {
+            font: 99% helvetica, arial, freesans, sans-serif;
+        }
+
+        select,
+        option {
+            padding: 0 .25em;
+        }
+
+        optgroup {
+            margin-top: .5em;
+        }
+
+        pre,
+        code {
+            font: 12px Monaco, "Courier New", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace;
+        }
+
+        body * {
+            line-height: 1.4em;
+        }
+
+        p {
+            margin: 1em 0;
+        }
+
+        img {
+            border: 0;
+        }
+
+        abbr {
+            border-bottom: none;
+        }
+
+        html {
+            overflow-y: scroll;
+        }
+
+        a {
+            color: #4183c4;
+            text-decoration: none;
+        }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+        h2,
+        h3 {
+            margin: 1em 0;
+        }
+
+        body {
+            background-color: #F8F8F8;
+            padding: 20px;
+        }
+
+            body:after {
+                content: "";
+            }
+        /* nabbed from bundle_github.css (.wikistyle) */
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            border: 0 !important;
+        }
+
+        h1 {
+            font-size: 170% !important;
+            border-top: 4px solid #aaa !important;
+            padding-top: .5em !important;
+            margin-top: 1.5em !important;
+        }
+
+            h1:first-child {
+                margin-top: 0 !important;
+                padding-top: .25em !important;
+                border-top: none !important;
+            }
+
+        h2 {
+            font-size: 150% !important;
+            margin-top: 1.5em !important;
+            border-top: 4px solid #e0e0e0 !important;
+            padding-top: .5em !important;
+        }
+
+        h3 {
+            margin-top: 1em !important;
+        }
+
+        hr {
+            border: 1px solid #ddd;
+        }
+
+        p {
+            margin: 1em 0 !important;
+            line-height: 1.5em !important;
+        }
+
+        a.absent {
+            color: #a00;
+        }
+
+        ul {
+            margin: 1em 0 1em 2em !important;
+        }
+
+        ol {
+            margin: 1em 0 1em 2em !important;
+        }
+
+            ul li,
+            ol li {
+                margin-top: .5em;
+                margin-bottom: .5em;
+            }
+
+            ul ul,
+            ul ol,
+            ol ol,
+            ol ul {
+                margin-top: 0 !important;
+                margin-bottom: 0 !important;
+            }
+
+        blockquote {
+            margin: 1em 0 !important;
+            border-left: 5px solid #ddd !important;
+            padding-left: .6em !important;
+            color: #555 !important;
+        }
+
+        dt {
+            font-weight: bold !important;
+            margin-left: 1em !important;
+        }
+
+        dd {
+            margin-left: 2em !important;
+            margin-bottom: 1em !important;
+        }
+
+        table {
+            margin: 1em 0 !important;
+        }
+
+            table th {
+                border-bottom: 1px solid #bbb !important;
+                padding: .2em 1em !important;
+            }
+
+            table td {
+                border-bottom: 1px solid #ddd !important;
+                padding: .2em 1em !important;
+            }
+
+        pre {
+            margin: 1em 0;
+            font-size: 12px;
+            background-color: #eee;
+            border: 1px solid #ddd;
+            padding: 5px;
+            line-height: 1.5em;
+            color: #444;
+            overflow: auto;
+            -webkit-box-shadow: rgba(0, 0, 0, 0.07) 0 1px 2px inset;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+        }
+
+            pre::-webkit-scrollbar {
+                height: 8px;
+                width: 8px;
+            }
+
+            pre::-webkit-scrollbar-track-piece {
+                margin-bottom: 10px;
+                background-color: #e5e5e5;
+                border-bottom-left-radius: 4px 4px;
+                border-bottom-right-radius: 4px 4px;
+                border-top-left-radius: 4px 4px;
+                border-top-right-radius: 4px 4px;
+            }
+
+            pre::-webkit-scrollbar-thumb:vertical {
+                height: 25px;
+                background-color: #ccc;
+                -webkit-border-radius: 4px;
+                -webkit-box-shadow: 0 1px 1px rgba(255, 255, 255, 1);
+            }
+
+            pre::-webkit-scrollbar-thumb:horizontal {
+                width: 25px;
+                background-color: #ccc;
+                -webkit-border-radius: 4px;
+            }
+
+            pre code {
+                padding: 0 !important;
+                font-size: 12px !important;
+                background-color: #eee !important;
+                border: none !important;
+            }
+
+        code {
+            font-size: 12px !important;
+            background-color: #f8f8ff !important;
+            color: #444 !important;
+            padding: 0 .2em !important;
+            border: 1px solid #dedede !important;
+        }
+
+        a code,
+        a:link code,
+        a:visited code {
+            color: #4183c4 !important;
+        }
+
+        img {
+            max-width: 100%;
+        }
+    </style>
+    <style>
+        .glyphicon {
+            padding-right: 9px;
+            display: none;
+        }
+    </style>
+    <script>
+        $(function () {
+            $('#accordion').on('shown.bs.collapse', '.panel-default', function (e) {
+                $('html,body').animate({
+                    scrollTop: $(this).offset().top
+                }, 300);
+            });
+            $('.panel-heading').on('click', function () {
+                $($(this).data('target')).collapse('toggle');
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#toc_0">
+                <h4 class="panel-title">reDraw</h4>
+            </div>
+            <div id="toc_0" class="panel-collapse collapse in">
+                <div class="panel-body">
+
+                    <p>Developed by David Reed and Jeremy Kemery</p>
+
+                    <p>Version 3.0</p>
+
+                    <p><a href="http://dave256apps.com/redraw">http://dave256apps.com/redraw</a></p>
+
+                    <p>Support email: <a href="mailto:reDraw.app@gmail.com?Subject=reDraw%20Support%20Version%203.0">reDraw.app@gmail.com</a></p>
+
+                    <ul>
+                        <li>Also see the help option on the Document Picker screen for help on it.</li>
+                    </ul>
+
+                    <p style="background-color: whitesmoke;">What&#39;s new in Version 3.0:</p>
+
+                    <ul>
+                        <li>
+                            <p>
+                                Support for iOS 11 Files app and standard iOS 11 document picker so you may now store documents in iCloud Drive (note: not all Cloud providers such as Dropbox and Google Drive have been updated for proper support of creating/saving files).
+                            </p>
+                        </li>
+                        <li>
+                            <p>Support for dragging images onto the canvas (before you had to copy and paste images and you may still use copy/paste if you prefer).</p>
+                        </li>
+                        <li>
+                            <p>Support for dragging PDFs from the Files app onto the canvas to import a PDF. You may still share a PDF from various PDF apps to reDraw.</p>
+                        </li>
+                    </ul>
+
+                    <p style="background-color: whitesmoke;">What&#39;s new in version 2.0:</p>
+
+                    <ul>
+                        <li>
+                            <p>Full screen option in navigation bar.</p>
+                        </li>
+                        <li>
+                            <p>Share icon in navigation bar has record option. See <a data-toggle="collapse" data-parent="#accordion" href="#recording">Recording</a> help.</p>
+                        </li>
+                    </ul>
+
+                    <p style="background-color: whitesmoke;">What&#39;s new in version 1.2:</p>
+
+                    <ul>
+                        <li>
+                            <p>
+                                Added a button in navigation bar (between + button for new slide and settings gear button) to expand the slide canvas. It hides the left bar and the the buttons/sliders above the canvas. Press it again to shrink the slide canvas and restore
+                                those views.
+                            </p>
+                        </li>
+                        <li>
+                            <p>Pressing <kbd>Cmd /</kbd> on an externally connected keyboard will create a text drawable below the bottom item on the current slide no matter what drawing tool is currently selected.</p>
+                        </li>
+                        <li>
+                            <p>Added Previous/Next slide buttons on either side of slide number button. Pressing the slide number displays a view for picking any slide.</p>
+                        </li>
+                        <li>
+                            <p>When drawing with the Pen tool and the Shift button is On, lines that are nearly horizontal or nearly vertical are changed to horizontal or vertical lines.</p>
+                        </li>
+                        <li>
+                            <p>Long press the Select button to select all the objects on a slide.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#drawing-tools">
+                <h4 class="panel-title"><span class="glyphicon glyphicon-pencil"></span>Pen/Line/Rect/Text drawing tools</h4>
+            </div>
+            <div id="drawing-tools" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p>Choose the drawing tool you want by tapping it and it remains active until you choose a different drawing tool.</p>
+
+                    <p>
+                        The <strong>Pen</strong> tool allows you to do free hand drawing. Each stroke (from finger/pencil touch to finger/pencil raise) creates one <em>drawable</em> object in the timeline. When drawing with the Pen tool and the Shift button is On, lines
+                        that are nearly horizontal or nearly vertical are changed to horizontal or vertical lines.
+                    </p>
+
+                    <p>
+                        The <strong>Line</strong> tool allows you to draw straight lines. When the <strong>Shift</strong> key is active, the straight lines are limited to horizontal or vertical lines. When using an Apple Pencil, you can create intermediate points on a multi-line
+                        segment by pressing firmly with the pencil at the point when you want to change the line direction. A multi-point line is consider one <em>drawable</em> in the timeline.
+                    </p>
+
+                    <p>
+                        The <strong>Rect</strong> tool allows you to draw rectangles. When the <strong>Shift</strong> key is active, the shapes are squares. The touch down point is one of the corners of the rectangle and as you drag your finger/pencil, you can release it
+                        at the point where you want the diagonally opposite corner to be. Each rectangle is considered a separate <em>drawable</em> object. Rectangles are drawn as outlines and not filled in with a solid color.
+                    </p>
+
+                    <p>
+                        The <strong>Text</strong> tool allows you to type text using the software virtual keyboard or a Bluetooth/Smart Keyboard. Tap the location where you want the top left of the text box to be and this will bring up the virtual keyboard (unless you have
+                        a hardware keyboard connected). Once the text box is shown, you may type the text you want with the keyboard. With the software keyboard, you may press the keyboard dismiss button (bottom right corner of the keyboard) to end the creation/editing
+                        of the <em>drawable</em> in the timeline. If you are using the hardware keyboard, press the <strong>Text</strong> tool button again to end creation/editing of the <em>drawable</em> in the timeline. When the <strong>Text</strong> tool is active,
+                        tapping on an existing Text object will begin editing it rather than creating a new <em>drawable</em> for the timeline. While editing text, use the blue handles on the blue outline rectangle to resize it. The red handle in the top middle allows
+                        you to move the Text.
+                    </p>
+
+                    <p>While editing text with an external keyboard the following keyboard shortcuts may be used:</p>
+
+                    <ul>
+                        <li><kbd>Cmd /</kbd> (end editing of the text)</li>
+                        <li><kbd>Cmd Opt /</kbd> (end editing of the text, set a stop point, and begin editing a new text object immediately below it)</li>
+                        <li><kbd>Cmd Opt Shift /</kbd> (end editing of the text, do NOT set a stop point, and begin editing a new text object immediately below it)</li>
+                        <li>If you are not currently editing text, pressing <kbd>Cmd /</kbd> creates a new text object below the bottom object on the screen.</li>
+                    </ul>
+
+                    <p>See the <a data-toggle="collapse" data-parent="#accordion" href="#settings">Settings</a> for how to change the font size for the Text.</p>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#undo-redo">
+                <h4 class="panel-title"><span class="glyphicon glyphicon-refresh"></span>Undo/Redo</h4>
+            </div>
+            <div id="undo-redo" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p>
+                        Just about every operation can be undone. Pressing the <strong>Undo</strong> button near the top left of the screen undoes the last operation (which could be adding a <em>drawable</em>, deleting a <em>drawable</em>, erasing the slide, changing the
+                        timeline slider, etc. The app supports multiple levels of undo. You may also redo the undone operations by pressing the <strong>Redo</strong> button that is next to the <strong>Undo</strong> button.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#deleting-erasing">
+                <h4 class="panel-title"><span class="glyphicon glyphicon-erase"></span>Deleting/Erasing</h4>
+            </div>
+            <div id="deleting-erasing" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p>
+                        You can delete the most recently drawn <em>drawable</em> object by pressing the delete button in the bottom left corner of the screen. You may move the timeline to change which object is the most recently drawn <em>drawable</em> affecting which one
+                        the delete button will delete. You may also use the Erase button in the top bar of the screen to delete multiple objects. It has options for the entire slide, from the current timeline position to the beginning or end of slide, or to the previous
+                        or next mark point. See <a data-toggle="collapse" data-parent="#accordion" href="#slider-usage">Slider Usage</a> for more information about mark points.
+                    </p>
+
+                    <p>If you want to erase part of an object, draw over it using <strong>Pen</strong> tool with the color matching the background color of the slide (the default color is white and is not currently changeable). See <a data-toggle="collapse" data-parent="#accordion" href="#pen-line-rect-styles">Pen/Line/Rect Styles</a>        for how to change the style used when drawing. If you want to delete the entire object, use the delete button rather than drawing over top of it.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#selecting-objects">
+                <h4 class="panel-title">Selecting objects</h4>
+            </div>
+            <div id="selecting-objects" class="panel-collapse collapse">
+                <div class="panel-body">
+
+
+                    <p>
+                        Activating the <strong>Select</strong> button puts the app in selection mode. You may draw a selection polygon around the <em>drawables</em> you want to select. Including any part of the <em>drawable</em> inside the selection polygon will include
+                        a <em>drawable</em> in the selected <em>drawables</em>. Once you finish drawing the selection polygon, the selection is drawn as a bounding rectangle but only the objects that were inside your polygon are selected. Selected objects are highlighted
+                        with a blue drop shadow. A Cut/Copy/Delete menu is shown if you selected any objects. Note that only visible items on the screen based on the timeline slider may be selected so you may need to move the timeline slider to the end if you want to
+                        select drawables that are not currently visible. In addition to choosing Cut/Copy/Delete, you can move the selected objects by dragging your finger/pencil starting the touch inside the selection rectangle and dragging to the new location. If you
+                        start the touch outside the selection rectangle, it allows you to select different objects.
+                    </p>
+
+                    <p>You may resize existing selected drawables by placing two fingers inside the selection polygon and pinching/stretching your fingers to resize the selected objects. If the rectangle is too small to place your fingers inside it, activate the <strong>Shift</strong>        button and then you may place your two fingers anywhere on the canvas to resize the selected objects.</p>
+
+                    <p>Note, you may also select a single object by tapping on it. If the bounding rectangle for that object is the only bounding rectangle that your tap is inside, that single object will be selected.</p>
+
+                    <p>
+                        After Cutting or Copying selected objects, you may Paste them at a new location on the canvas (or on a new page in the document or in a different reDraw document). You may also first change the slider timeline to affect where they appear in the timeline.
+                        If you have cut or copied objects and the <strong>Select</strong> button is still active, tapping on the screen will give you the option to paste the previously cut or copied objects.
+                    </p>
+
+                    <p>Tapping a text <em>drawable</em> allows you to Cut, Copy, Delete, or Edit the text.</p>
+
+                    <p>When non-text objects are selected, pressing one of the six style buttons see (<a data-toggle="collapse" data-parent="#accordion" href="#pen-line-rect-styles">Pen/Line/Rect Styles</a>) changes the current style of the selected objects.</p>
+
+                    <p>A long press of the Select button will select all the items on the current slide.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#shift-button">
+                <h4 class="panel-title">Shift button</h4>
+            </div>
+            <div id="shift-button" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p>
+                        The <strong>Shift</strong> button affects how a number of tools work. As mentioned in the <a data-toggle="collapse" data-parent="#accordion" href="#pen-line-rect-styles">Pen/Line/Rect Styles</a> section, when the <strong>Shift</strong> button is active, lines are limited to horizontal or vertical
+                        lines and rectangles are limited to squares. When objects are selected and the <strong>Shift</strong> button is active, pinching with two fingers anywhere on the canvas, resizes the selected objects. This is useful when the selected object(s)
+                        are too small to fit your fingers inside it (which will scale it even if the <strong>Shift</strong> button is inactive).
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#pen-line-rect-styles">
+                <h4 class="panel-title">Pen/Line/Rect Styles</h4>
+            </div>
+            <div id="pen-line-rect-styles" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p>
+                        There are six styles (the 6 circular buttons below the <strong>Shift</strong> button) that control the color and thickness when drawing with the <strong>Pen</strong>, <strong>Line</strong>, or <strong>Rect</strong> tool. You may change the color/thickness
+                        for any of these six styles by pressing and holding on one of the buttons. After a long tap on one of the six style buttons, a window appears that allows you to change the thickness and color using sliders. After you&#39;ve changed the color/thickness,
+                        tap outside the window to make it disappear. Note that these six styles are saved with the document so different documents may have different styles stored with them. The white style can be used with the <strong>Pen</strong> or <strong>Line</strong>        tool to erase part of an object by drawing over top of it. If you want to erase an entire object, delete it using the delete button (see <a data-toggle="collapse" data-parent="#accordion" href="#deleting-erasing">Deleting/Erasing</a>).
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#pointer-cursor">
+                <h4 class="panel-title">Pointer/Cursor</h4>
+            </div>
+            <div id="pointer-cursor" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p>See the <a data-toggle="collapse" data-parent="#accordion" href="#settings">Settings</a> for how to make a pointer/cursor appear for pointing parts of the canvas out to people viewing a presentation with reDraw.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#adding-images-and-background-images">
+                <h4 class="panel-title">Adding images and background images</h4>
+            </div>
+            <div id="adding-images-and-background-images" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p>
+                        If the app displaying an image supports dragging images out of it (such as Safari, the Photos app, etc.), you can drag an image and drop it onto the canvas. Previous versions of reDraw supported copying an image and then pasting it onto the canvas.
+                        That is still supported. You can add images to your document by copying an image from another source. Here are some ways to copy an image.
+                    </p>
+
+                    <ol>
+                        <li>
+                            <p>Use the Safari web browser to find your image, long tap on the image, and choose copy, and then return to your reDraw document.</p>
+                        </li>
+                        <li>
+                            <p>Open your Photos app, find a photo, and press the Share icon button, choose Copy, and then return to your reDraw document.</p>
+                        </li>
+                        <li>
+                            <p>Open the Mail app, long tap on a photo attachment, choose Copy, and then return to your reDraw document.</p>
+                        </li>
+                    </ol>
+
+                    <p>Once you&#39;ve copied an image and are back on the slide in your reDraw document, make the <strong>Select</strong> tool active, and tap on the canvas and choose Paste.</p>
+
+                    <p>You may choose to set a selected image as the background image for the current page (using the Set Slide Background Image option) or for all the pages in the document (using the Set Default Slide Background Image). See the <a data-toggle="collapse" data-parent="#accordion" href="#settings">Settings</a>        section for how to delete a background image.</p>
+
+                    <p>Selected images may be resized by using two fingers to pinch/stretch the image.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#importing-a-pdf-into-redraw">
+                <h4 class="panel-title">Importing a PDF into reDraw</h4>
+            </div>
+            <div id="importing-a-pdf-into-redraw" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p>In version 3.0 and higher, you may drag a PDF from the Files app onto a slide to import a PDF and choose how many slides per PDF page to import.</p>
+
+                    <p>
+                        You may also use the previous method for importing a PDF. Launch the app containing the PDF (such as GoodReader, PDF Expert, etc.). From that app, choose the option to share it, then choose the option to Open In, and select &quot;Copy to reDraw&quot;.
+                        This will switch to the reDraw app. If a document is already open, you are given the option to &quot;Delete PDF&quot;, &quot;Import into different document&quot;, or &quot;Import into this document&quot;. If a document is not already open, select
+                        the document into which you want to import the PDF or create a new document; the previously mentioned three options will be shown. If you do not want to import the PDF into any document, choose &quot;Delete PDF&quot;. If you want to import the
+                        PDF into a different document, choose that option; this will close the current document and then you can select the document you want to use. Once you have opened the document into which you want to import the PDF, choose the option to &quot;Import
+                        into this document.&quot; You may also choose how many slides you want per PDF page. This is useful if you are importing a letter size PDF into a landscape document and want two sliders per PDF so you can show the top of the page on one slide
+                        and the bottom of the page on the next slide. It will import at the largest resolution that maintains the aspect ratio. If you import a letter size PDF into a 16:9 or 4:3 reDraw document, you will likely want to use the option to duplicate a slide
+                        and make multiple copies of each page or use the option to import multiple slides per page. Once you&#39;ve done that, you can select the PDF object on a slide by using the &quot;Select&quot; tool and then tapping the PDF. Once it is selected
+                        you can pinch/zoom and drag the PDF page until you get the portion you want visible on that slide. Repeat the process for the other slides.
+                    </p>
+
+                    <p>After you have each PDF page scaled the way you want, you can use the pen, line, etc. tools to write on top of the PDF.</p>
+
+                    <p>
+                        Note, PDFs may require a large amount of memory. Importing PDFs with 1-20 pages should work fine, but importing PDFs with hundreds of pages may cause the app to run out of memory. You may want to use another app (such as Preview on your Mac) to create
+                        a PDF with just a portion of the pages and then create separate reDraw documents for each portion of the original PDF document.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#slider-usage">
+                <h4 class="panel-title">Timeline Slider Usage</h4>
+            </div>
+            <div id="slider-usage" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p>
+                        The timeline slider allows you to control what objects that you have drawn are currently visible on the canvas. This can be useful for presentations where you want to reveal part of the canvas in steps as you talk. Each object you draw causes a vertical
+                        line in the timeline slider representing that object. Once you have drawn multiple objects, you can tap a slider position to only draw the objects to that object or you may drag the circle that represents the current position to change position
+                        in the timeline. The black left and right arrows below the timeline slider on the right side allow fine control if you have so many drawables on a slide that it is difficult to select the exact position you want using your finger/pencil on the
+                        slider. Pressing these buttons move the timeline slider backward/forward one object at a time.
+                    </p>
+
+                    <p>
+                        The mark point button (between the two arrows) allows you to mark a point in the timeline that you want to stop at. Pressing it when the current position is already marked, unmarks that spot. The red arrow buttons move you to the previous/next marked
+                        point to make it easy to move to the correct next position when presenting. When you are at the end of a slide, pressing the next mark point button moves to the next slide. When you are at the beginning of a slide, pressing the previous mark point
+                        button moves to the previous slide. The play button in the top right corner of the screen just to the left of the Help button, moves to the beginning of the first slide for starting a presentation. The marked points are saved with the document
+                        so you can create a document with the points you want to stop at and then step through it later when presenting with the document.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#zooming-and-panning">
+                <h4 class="panel-title">Zooming and Panning</h4>
+            </div>
+            <div id="zooming-and-panning" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p>
+                        Except when objects are selected and the <strong>Shift</strong> button is active, use two fingers to pinch/stretch to zoom in/out and drag two fingers to pan when you are zoomed in. Note that when you are at zoom level where the entire canvas is visible,
+                        dragging two fingers does not pan.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#settings">
+                <h4 class="panel-title">Settings</h4>
+            </div>
+            <div id="settings" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p>Pressing the Settings button (gear icon near the top right of the screen) displays a Settings window. Tap outside the Settings window or press its <strong>Done</strong> button to make it disappear.</p>
+
+                    <p>
+                        The Drawing Mode setting affects what touches in the canvas do. When in Pencil mode, only the pencil can be used to draw objects. A single finger will display a red circle for pointing objects out on the canvas except if you are in <strong>Select</strong>        mode in which case a finger can be used to select objects or paste previously selected objects. In Finger mode, a single finger is used to draw objects. In Cursor mode, the finger or a pencil touch will draw the pointer circle. For all three modes,
+                        two fingers are used to pan or zoom (see <a data-toggle="collapse" data-parent="#accordion" href="#zooming-and-panning">Zooming and Panning</a>).
+                    </p>
+
+                    <p>
+                        The Grid Mode affects whether Lines (but not free form drawing in <strong>Pen</strong> mode), Rectangles, Text, and images snap to the nearest grid point. This is useful for lining up rectangles and snapping line endpoints to other lines or rectangles.
+                        Changing the grid size does not move existing objects so it is recommended that you pick a grid size for a document and do not change it once you&#39;ve started drawing objects in the document.
+                    </p>
+
+                    <p>
+                        The Mirror Display setting allows you to control what is seen on an external display (either an AirPlay screen or using the lightning adapter to connect an external monitor or projector). When Mirror Display setting is off, only the canvas is shown
+                        on the external screen (typically what you want for presenting a document). When the Mirror Display setting is on, the external monitor display matches the iPad screen. This is useful for demoing the app or necessary if you want to use multitasking
+                        to display two different apps side by side on the external screen. Note when using the iOS AirPlay option, you must select the AirPlay device you want the object to appear on and you must turn mirroring on in the AirPlay menu otherwise nothing
+                        will appear on the AirPlay device. You can then choose the option to mirror the display or just show the canvas using the reDraw Settings option to mirror the display.
+                    </p>
+
+                    <p>
+                        If you have set a background image (see <a data-toggle="collapse" data-parent="#accordion" href="#adding-images-and-background-images">Adding images and background images</a>), the options to clear this slide&#39;s background image or the entire document&#39;s background image are active and may
+                        be pressed to delete the background image.
+                    </p>
+
+                    <p>The Text Size affects the font for new text objects. You may also edit an existing text object, and open the Settings icon and use it to change the font size for that text object.</p>
+
+                    <p>The Settings are not saved with a document and do not change when you open a different document (i.e., the settings stay in effect until you change them to a different value).</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#external-screen">
+                <h4 class="panel-title">External screen</h4>
+            </div>
+            <div id="external-screen" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p>
+                        Connecting an external screen either via AirPlay or an external monitor/projector via a lightning adapter allows you to present your document. See the <a data-toggle="collapse" data-parent="#accordion" href="#settings">Settings</a> section for mirroring options. When creating your document, it
+                        is recommended that you match the size or at least the aspect ratio of the external screen size you plan to use to avoid black bars on the sides or top/bottom that are necessary to preserve the aspect ratio.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#pointer-cursor2">
+                <h4 class="panel-title">Pointer/Cursor</h4>
+            </div>
+            <div id="pointer-cursor2" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p>See the <a data-toggle="collapse" data-parent="#accordion" href="#settings">Settings</a> section for how to point out objects on an external screen without drawing as you point them out.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#renaming-the-current-document">
+                <h4 class="panel-title">Renaming the current document</h4>
+            </div>
+            <div id="renaming-the-current-document" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p>Close the document and use the file picker to rename it. Long press the document and choose Rename.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#reordering-slides">
+                <h4 class="panel-title">Reordering slides</h4>
+            </div>
+            <div id="reordering-slides" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p>
+                        Press the button labelled &quot;Slide x of y&quot; in the middle below the slider to bring up a window that allows to select a different slide. Tap and hold a slide until it turns blue AND expands in size and then drag it to the position you want
+                        it among the other slides.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#selecting-duplicating-a-slide">
+                <h4 class="panel-title">Selecting/Duplicating a slide</h4>
+            </div>
+            <div id="selecting-duplicating-a-slide" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p>
+                        Press the button labeled &quot;Slide x of y&quot; in the middle below the slider to bring up a window that allows you to select a different slide. Tap the slide that you want to change to. Press the Edit button to delete or duplicate slides. After
+                        selecting one or more slides (selected slides are outlined in blue), press double rectangle with a plus button to duplicate these slides or press the trash can icon to delete those slides. Press the + button to add a new slide.
+                    </p>
+
+                    <p>Press the arrow buttons on either side of the button labeled &quot;Slide x of y&quot; to move to the previous/next slide.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#exporting-as-pdf-and-sharing-a-redraw-document">
+                <h4 class="panel-title">Exporting as PDF and Sharing a reDraw document</h4>
+            </div>
+            <div id="exporting-as-pdf-and-sharing-a-redraw-document" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p>
+                        Press the share icon (square with an arrow pointing up). When exporting to PDF, the &quot;New page at marked points&quot; switch determines whether there is one page per slide (when the switch is off) or a new page for every marked point in the slide.
+                        See the <a data-toggle="collapse" data-parent="#accordion" href="#slider-usage">Timeline Slider Usage</a> section for more information on marked points. Choosing &quot;Share PDF&quot; allows you to email or AirDrop the PDF to recipients you specify in the new mail message dialog. Choosing &quot;Open
+                        PDF in...&quot; allows you to create the PDF and open it in another app on your iPad that can view and/or edit PDFs. Choosing &quot;Share Document&quot; allows you to email or AirDrop the reDraw document. This can be used to create a backup file
+                        on your computer or to send it to another iPad that has the reDraw application on it.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#starting-a-presentation">
+                <h4 class="panel-title">Starting a presentation</h4>
+            </div>
+            <div id="starting-a-presentation" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p>Press the play button (just to the left of the Help button in the top right of the screen) to navigate to the beginning of the document to begin a presentation. Then use the next mark point button to step through your presentation. See <a data-toggle="collapse" data-parent="#accordion" href="#slider-usage">Timeline Slider Usage</a>        for details on mark points.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#recording">
+                <h4 class="panel-title">Recording</h4>
+            </div>
+            <div id="recording" class="panel-collapse collapse">
+                <div class="panel-body">
+
+                    <p>
+                        There are different techniques you can use to record a reDraw presentation. Starting with version 2.0, reDraw now supports recording directly on the iPad from within the app using Apple&#39;s ReplayKit framework. Note, due to iPad hardware limitations
+                        you cannot connect to an external display/projector using the Lightning to VGA or Lightning to HDMI adapters or use AirPlay at the same time as you are recording. Open your document, and choose the Share icon in the top navigation bar. An overlay
+                        view appears on top of your canvas (but the overlay window will not be in the recording). The overlay window can be moved by touching the gray portion at the top of the window and dragging it to the desired location.
+                    </p>
+
+                    <p>
+                        Press the <strong>Rec</strong> button. A dialog requesting permission to record your screen and microphone (or the screen only) will appear (unless you had recently granted permission). If you only want to record the screen, choose the &quot;Record
+                        Screen Only&quot; option. If you want to record your voice along with the screen choose the &quot;Record Screen &amp; Microphone&quot; option. You may use the built in microphone of the iPad or if you use Apple&#39;s lightning to USB adapter,
+                        you may be able to use a USB microphone. The developers have tested this and it works using their microphone if you also plug in a lightning cable to the adapter to supply power.
+                    </p>
+
+                    <p>
+                        Unfortunately, ReplayKit does not always start recording immediately (usually it doesn&#39;t the first time you try to record during a session in our experience). We believe this is a bug and have reported it to Apple. But for now, if the recording
+                        has not immediately we show another dialog letting you know this. Usually once you touch a button on the screen it does start recording so pressing the Ok button to dismiss the dialog starts the recording. You can tell that recording has started
+                        since the top of the overlay window will change from gray to red while it is recording.
+                    </p>
+
+                    <p>
+                        While it is recording you can use the buttons in the overlay window to move to the previous/next mark points. Pressing the Tools button expands the overlay window to show the different drawing modes and styles. If you have the Settings for your finger
+                        to act as a pointer, you can use your finger to position a red circle where you want to point, otherwise your finger can be used to draw. You may also draw with the Apple Pencil.
+                    </p>
+
+                    <p>
+                        When you are done recording, press the <strong>Stop</strong> button (the <strong>Rec</strong> button changes to <strong>Stop</strong> while recording). You may then discard the recording or choose to view it. If you choose the view option, you may
+                        play the recording or crop the beginning and end using the timeline at the bottom. You can then use the Share icon in the top navigation bar to email it or use the <strong>Save</strong> button to save it to the camera roll.
+                    </p>
+
+                    <p>The other options for recording are:</p>
+
+                    <ul>
+                        <li>
+                            <p>connect the iPad to a Mac using a lightning to USB cable and use QuickTime to record the screen.</p>
+                        </li>
+                        <li>
+                            <p>
+                                use a third-party AirPlay server on your Mac such as <strong>Reflector 2</strong> or <strong>Air Server</strong> and use the iOS AirPlay option to display the iPad screen on your Mac and use <strong>QuickTime Player</strong> to record your
+                                Mac screen or use third party screen recording software such as <strong>ScreenFlow</strong> or <strong>Camtasia for Mac</strong> to record your Mac screen and then edit the recording.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
