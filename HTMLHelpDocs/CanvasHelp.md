@@ -1,4 +1,4 @@
-### reDraw
+# reDraw
 
 Developed by David Reed and Jeremy Kemery
 
@@ -10,15 +10,15 @@ Support email: [reDraw.app@gmail.com](mailto:reDraw.app@gmail.com?Subject=reDraw
 
 * Also see the help option on the Document Picker screen for help on it.
 
-What's new in Version 3.1.2:
+### What's new in Version 3.1.2:
 
 * Minor UI tweaks
 
-What's new in Version 3.1.1:
+### What's new in Version 3.1.1:
 
 * Small UI tweaks
 
-What's new in Version 3.1:
+### What's new in Version 3.1:
 
 * Zooming/panning on iPad will also zoom/pan external screen.
 
@@ -26,7 +26,7 @@ What's new in Version 3.1:
 
 * Long press mark button will clear all marked points on the current slide. Undo will restore all the marked points.
 
-What's new in Version 3.0:
+### What's new in Version 3.0:
 
 * Support for iOS 11 Files app and standard iOS 11 document picker so you may now store documents in iCloud Drive (note: not all Cloud providers such as Dropbox and Google Drive have been updated for proper support of creating/saving files). 
 
@@ -34,13 +34,13 @@ What's new in Version 3.0:
 
 * Support for dragging PDFs from the Files app onto the canvas to import a PDF. You may still share a PDF from various PDF apps to reDraw.
 
-What's new in version 2.0:
+### What's new in version 2.0:
 
 * Full screen option in navigation bar.
 
 * Share icon in navigation bar has record option. See [Recording](#recording) help.
 
-What's new in version 1.2:
+### What's new in version 1.2:
 
 * Added a button in navigation bar (between + button for new slide and settings gear button) to expand the slide canvas. It hides the left bar and the the buttons/sliders above the canvas. Press it again to shrink the slide canvas and restore those views.
 
@@ -54,7 +54,7 @@ What's new in version 1.2:
 
 
 <a name="table-of-contents"></a>
-#### Whiteboard Canvas Help
+## Whiteboard Canvas Help
 
 [Pen/Line/Rect/Text drawing tools](#drawing-tools)
 
@@ -97,7 +97,7 @@ What's new in version 1.2:
 ---
 
 <a name="drawing-tools"></a>
-#### Pen/Line/Rect/Text drawing tools
+## Pen/Line/Rect/Text drawing tools
 
 Choose the drawing tool you want by tapping it and it remains active until you choose a different drawing tool.
 
@@ -123,7 +123,7 @@ See the [Settings](#settings) for how to change the font size for the Text.
 ---
 
 <a name="undo/redo"></a>
-#### Undo/Redo
+## Undo/Redo
 
 Just about every operation can be undone. Pressing the **Undo** button near the top left of the screen undoes the last operation (which could be adding a *drawable*, deleting a *drawable*, erasing the slide, changing the timeline slider, etc. The app supports multiple levels of undo. You may also redo the undone operations by pressing the **Redo** button that is next to the **Undo** button.
 
@@ -132,7 +132,7 @@ Just about every operation can be undone. Pressing the **Undo** button near the 
 ---
 
 <a name="deleting/erasing"></a>
-#### Deleting/Erasing
+## Deleting/Erasing
 
 You can delete the most recently drawn *drawable* object by pressing the delete button in the bottom left corner of the screen. You may move the timeline to change which object is the most recently drawn *drawable* affecting which one the delete button will delete. You may also use the Erase button in the top bar of the screen to delete multiple objects. It has options for the entire slide, from the current timeline position to the beginning or end of slide, or to the previous or next mark point. See [Slider Usage](#slider-usage) for more information about mark points.
 
@@ -143,7 +143,7 @@ If you want to erase part of an object, draw over it using **Pen** tool with the
 ---
 
 <a name="selecting-objects"></a>
-#### Selecting objects
+## Selecting objects
 
 Activating the **Select** button puts the app in selection mode. You may draw a selection polygon around the *drawables* you want to select. Including any part of the *drawable* inside the selection polygon will include a *drawable* in the selected *drawables*. Once you finish drawing the selection polygon, the selection is drawn as a bounding rectangle but only the objects that were inside your polygon are selected. Selected objects are highlighted with a blue drop shadow. A Cut/Copy/Delete menu is shown if you selected any objects. Note that only visible items on the screen based on the timeline slider may be selected so you may need to move the timeline slider to the end if you want to select drawables that are not currently visible. In addition to choosing Cut/Copy/Delete, you can move the selected objects by dragging your finger/pencil starting the touch inside the selection rectangle and dragging to the new location. If you start the touch outside the selection rectangle, it allows you to select different objects.
 
@@ -164,7 +164,7 @@ A long press of the Select button will select all the items on the current slide
 ---
 
 <a name="shift-button"></a>
-#### Shift button
+## Shift button
 
 The **Shift** button affects how a number of tools work. As mentioned in the [Pen/Line/Rect Styles](#pen/line/rect-styles) section, when the **Shift** button is active, lines are limited to horizontal or vertical lines and rectangles are limited to squares. When objects are selected and the **Shift** button is active, pinching with two fingers anywhere on the canvas, resizes the selected objects. This is useful when the selected object(s) are too small to fit your fingers inside it (which will scale it even if the **Shift** button is inactive).
 
@@ -173,7 +173,7 @@ The **Shift** button affects how a number of tools work. As mentioned in the [Pe
 ---
 
 <a name="pen/line/rect-styles"></a>
-#### Pen/Line/Rect Styles
+## Pen/Line/Rect Styles
 
 There are six styles (the 6 circular buttons below the **Shift** button) that control the color and thickness when drawing with the **Pen**, **Line**, or **Rect** tool. You may change the color/thickness for any of these six styles by pressing and holding on one of the buttons. After a long tap on one of the six style buttons, a window appears that allows you to change the thickness and color using sliders. After you've changed the color/thickness, tap outside the window to make it disappear. Note that these six styles are saved with the document so different documents may have different styles stored with them. The white style can be used with the **Pen** or **Line** tool to erase part of an object by drawing over top of it. If you want to erase an entire object, delete it using the delete button (see [Deleting/Erasing](#deleting/erasing)).
 
@@ -182,7 +182,7 @@ There are six styles (the 6 circular buttons below the **Shift** button) that co
 ---
 
 <a name="pointer/cursor"></a>
-#### Pointer/Cursor
+## Pointer/Cursor
 
 See the [Settings](#settings) for how to make a pointer/cursor appear for pointing parts of the canvas out to people viewing a presentation with reDraw.
 
@@ -191,7 +191,7 @@ See the [Settings](#settings) for how to make a pointer/cursor appear for pointi
 ---
 
 <a name="adding-images-and-background-images"></a>
-#### Adding images and background images
+## Adding images and background images
 
 If the app displaying an image supports dragging images out of it (such as Safari, the Photos app, etc.), you can drag an image and drop it onto the canvas. Previous versions of reDraw supported copying an image and then pasting it onto the canvas. That is still supported. You can add images to your document by copying an image from another source. Here are some ways to copy an image.
 
@@ -212,7 +212,7 @@ Selected images may be resized by using two fingers to pinch/stretch the image.
 ---
 
 <a name="importing-a-pdf-into-redraw"></a>
-#### Importing a PDF into reDraw
+## Importing a PDF into reDraw
 
 In version 3.0 and higher, you may drag a PDF from the Files app onto a slide to import a PDF and choose how many slides per PDF page to import.
 
@@ -227,7 +227,7 @@ Note, PDFs may require a large amount of memory. Importing PDFs with 1-20 pages 
 ---
 
 <a name="slider-usage"></a>
-#### Timeline Slider Usage
+## Timeline Slider Usage
 
 The timeline slider allows you to control what objects that you have drawn are currently visible on the canvas. This can be useful for presentations where you want to reveal part of the canvas in steps as you talk. Each object you draw causes a vertical line in the timeline slider representing that object. Once you have drawn multiple objects, you can tap a slider position to only draw the objects to that object or you may drag the circle that represents the current position to change position in the timeline. The black left and right arrows below the timeline slider on the right side allow fine control if you have so many drawables on a slide that it is difficult to select the exact position you want using your finger/pencil on the slider. Pressing these buttons move the timeline slider backward/forward one object at a time. 
 
@@ -240,7 +240,7 @@ Long pressing the mark point button will delete all the marked points on the cur
 ---
 
 <a name="zooming-and-panning"></a>
-#### Zooming and Panning
+## Zooming and Panning
 
 Except when objects are selected and the **Shift** button is active, use two fingers to pinch/stretch to zoom in/out and drag two fingers to pan when you are zoomed in. Note that when you are at zoom level where the entire canvas is visible, dragging two fingers does not pan. If you have connected an external screen, the external screen will also zoom/pan as you zoom/pan the iPad canvas.
 
@@ -250,7 +250,7 @@ Except when objects are selected and the **Shift** button is active, use two fin
 ---
 
 <a name="settings"></a>
-#### Settings
+## Settings
 
 Pressing the Settings button (gear icon near the top right of the screen) displays a Settings window. Tap outside the Settings window or press its **Done** button to make it disappear.
 
@@ -271,7 +271,7 @@ The Settings are not saved with a document and do not change when you open a dif
 ---
 
 <a name="external-screen"></a>
-#### External screen
+## External screen
 
 Connecting an external screen either via AirPlay or an external monitor/projector via a lightning adapter allows you to present your document. See the [Settings](#settings) section for mirroring options. When creating your document, it is recommended that you match the size or at least the aspect ratio of the external screen size you plan to use to avoid black bars on the sides or top/bottom that are necessary to preserve the aspect ratio.
 
@@ -280,7 +280,7 @@ Connecting an external screen either via AirPlay or an external monitor/projecto
 ---
 
 <a name="pointer/cursor"></a>
-#### Pointer/Cursor
+## Pointer/Cursor
 
 See the [Settings](#settings) section for how to point out objects on an external screen without drawing as you point them out.
 
@@ -289,7 +289,7 @@ See the [Settings](#settings) section for how to point out objects on an externa
 ---
 
 <a name="renaming-the-current-document"></a>
-#### Renaming the current document
+## Renaming the current document
 
 Close the document and use the file picker to rename it. Long press the document and choose Rename.
 
@@ -298,7 +298,7 @@ Close the document and use the file picker to rename it. Long press the document
 ---
 
 <a name="reordering-slides"></a>
-#### Reordering slides
+## Reordering slides
 Press the button labelled "Slide x of y" in the middle below the slider to bring up a window that allows to select a different slide. Tap and hold a slide until it turns blue AND expands in size and then drag it to the position you want it among the other slides.
 
 [Table of Contents](#table-of-contents)
@@ -306,7 +306,7 @@ Press the button labelled "Slide x of y" in the middle below the slider to bring
 ---
 
 <a name="selecting/duplicating-a-slide"></a>
-#### Selecting/Duplicating a slide
+## Selecting/Duplicating a slide
 
 Press the button labeled "Slide x of y" in the middle below the slider to bring up a window that allows you to select a different slide. Tap the slide that you want to change to. Press the Edit button to delete or duplicate slides. After selecting one or more slides (selected slides are outlined in blue), press double rectangle with a plus button to duplicate these slides or press the trash can icon to delete those slides. Press the + button to add a new slide.
 
@@ -331,7 +331,7 @@ To share it as reDraw document to be opened with reDraw on another iPad, use the
 ---
 
 <a name="starting-a-presentation"></a>
-#### Starting a presentation
+## Starting a presentation
 
 Press the play button (just to the left of the Help button in the top right of the screen) to navigate to the beginning of the document to begin a presentation. Then use the next mark point button to step through your presentation. See [Timeline Slider Usage](#slider-usage) for details on mark points.
 
@@ -340,7 +340,7 @@ Press the play button (just to the left of the Help button in the top right of t
 ----
 
 <a name="recording"></a>
-#### Recording
+## Recording
 
 There are different techniques you can use to record a reDraw presentation. Starting with version 2.0, reDraw now supports recording directly on the iPad from within the app using Apple's ReplayKit framework. Note, due to iPad hardware limitations you cannot connect to an external display/projector using the Lightning to VGA or Lightning to HDMI adapters or use AirPlay at the same time as you are recording. Open your document, and choose the Share icon in the top navigation bar. An overlay view appears on top of your canvas (but the overlay window will not be in the recording). The overlay window can be moved by touching the gray portion at the top of the window and dragging it to the desired location.
 
