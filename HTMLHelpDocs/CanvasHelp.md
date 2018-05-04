@@ -2,13 +2,29 @@
 
 Developed by David Reed and Jeremy Kemery
 
-Version 3.0
+Version 3.1.2
 
 http://dave256apps.com/redraw
 
-Support email: [reDraw.app@gmail.com](mailto:reDraw.app@gmail.com?Subject=reDraw%20Support%20Version%203.0)
+Support email: [reDraw.app@gmail.com](mailto:reDraw.app@gmail.com?Subject=reDraw%20Support%20Version%203.1.2)
 
 * Also see the help option on the Document Picker screen for help on it.
+
+What's new in Version 3.1.2:
+
+* Minor UI tweaks
+
+What's new in Version 3.1.1:
+
+* Small UI tweaks
+
+What's new in Version 3.1:
+
+* Zooming/panning on iPad will also zoom/pan external screen.
+
+* Long press next slide button will duplicate slide and move to it. Undo will delete the duplicated slide and move back to the original slide.
+
+* Long press mark button will clear all marked points on the current slide. Undo will restore all the marked points.
 
 What's new in Version 3.0:
 
@@ -129,8 +145,6 @@ If you want to erase part of an object, draw over it using **Pen** tool with the
 <a name="selecting-objects"></a>
 #### Selecting objects
 
-[Table of Contents](#table-of-contents)
-
 Activating the **Select** button puts the app in selection mode. You may draw a selection polygon around the *drawables* you want to select. Including any part of the *drawable* inside the selection polygon will include a *drawable* in the selected *drawables*. Once you finish drawing the selection polygon, the selection is drawn as a bounding rectangle but only the objects that were inside your polygon are selected. Selected objects are highlighted with a blue drop shadow. A Cut/Copy/Delete menu is shown if you selected any objects. Note that only visible items on the screen based on the timeline slider may be selected so you may need to move the timeline slider to the end if you want to select drawables that are not currently visible. In addition to choosing Cut/Copy/Delete, you can move the selected objects by dragging your finger/pencil starting the touch inside the selection rectangle and dragging to the new location. If you start the touch outside the selection rectangle, it allows you to select different objects.
 
 You may resize existing selected drawables by placing two fingers inside the selection polygon and pinching/stretching your fingers to resize the selected objects. If the rectangle is too small to place your fingers inside it, activate the **Shift** button and then you may place your two fingers anywhere on the canvas to resize the selected objects.
@@ -144,6 +158,8 @@ Tapping a text *drawable* allows you to Cut, Copy, Delete, or Edit the text.
 When non-text objects are selected, pressing one of the six style buttons see ([Pen/Line/Rect Styles](#pen/line/rect-styles)) changes the current style of the selected objects.
 
 A long press of the Select button will select all the items on the current slide.
+
+[Table of Contents](#table-of-contents)
 
 ---
 
@@ -217,6 +233,8 @@ The timeline slider allows you to control what objects that you have drawn are c
 
 The mark point button (between the two arrows) allows you to mark a point in the timeline that you want to stop at. Pressing it when the current position is already marked, unmarks that spot. The red arrow buttons move you to the previous/next marked point to make it easy to move to the correct next position when presenting. When you are at the end of a slide, pressing the next mark point button moves to the next slide. When you are at the beginning of a slide, pressing the previous mark point button moves to the previous slide. The play button in the top right corner of the screen just to the left of the Help button, moves to the beginning of the first slide for starting a presentation. The marked points are saved with the document so you can create a document with the points you want to stop at and then step through it later when presenting with the document.
 
+Long pressing the mark point button will delete all the marked points on the current slide. If you accidentally do this, press the Undo button to restore the marked points.
+
 [Table of Contents](#table-of-contents)
 
 ---
@@ -224,7 +242,7 @@ The mark point button (between the two arrows) allows you to mark a point in the
 <a name="zooming-and-panning"></a>
 #### Zooming and Panning
 
-Except when objects are selected and the **Shift** button is active, use two fingers to pinch/stretch to zoom in/out and drag two fingers to pan when you are zoomed in. Note that when you are at zoom level where the entire canvas is visible, dragging two fingers does not pan.
+Except when objects are selected and the **Shift** button is active, use two fingers to pinch/stretch to zoom in/out and drag two fingers to pan when you are zoomed in. Note that when you are at zoom level where the entire canvas is visible, dragging two fingers does not pan. If you have connected an external screen, the external screen will also zoom/pan as you zoom/pan the iPad canvas.
 
 
 [Table of Contents](#table-of-contents)
@@ -283,6 +301,8 @@ Close the document and use the file picker to rename it. Long press the document
 #### Reordering slides
 Press the button labelled "Slide x of y" in the middle below the slider to bring up a window that allows to select a different slide. Tap and hold a slide until it turns blue AND expands in size and then drag it to the position you want it among the other slides.
 
+[Table of Contents](#table-of-contents)
+
 ---
 
 <a name="selecting/duplicating-a-slide"></a>
@@ -290,7 +310,7 @@ Press the button labelled "Slide x of y" in the middle below the slider to bring
 
 Press the button labeled "Slide x of y" in the middle below the slider to bring up a window that allows you to select a different slide. Tap the slide that you want to change to. Press the Edit button to delete or duplicate slides. After selecting one or more slides (selected slides are outlined in blue), press double rectangle with a plus button to duplicate these slides or press the trash can icon to delete those slides. Press the + button to add a new slide.
 
-Press the arrow buttons on either side of the button labeled "Slide x of y" to move to the previous/next slide.
+Press the arrow buttons on either side of the button labeled "Slide x of y" to move to the previous/next slide. Long pressing the next slide button will duplicate the current slide and move to it.
 
 
 [Table of Contents](#table-of-contents)
@@ -300,7 +320,11 @@ Press the arrow buttons on either side of the button labeled "Slide x of y" to m
 <a name="exporting-as-pdf-and-sharing-a-redraw-document"></a>
 #### Exporting as PDF and Sharing a reDraw document
 
-Press the share icon (square with an arrow pointing up). When exporting to PDF, the "New page at marked points" switch determines whether there is one page per slide (when the switch is off) or a new page for every marked point in the slide. See the [Timeline Slider Usage](#slider-usage) section for more information on marked points. Choosing "Share PDF" allows you to email or AirDrop the PDF to recipients you specify in the new mail message dialog. Choosing "Open PDF in..." allows you to create the PDF and open it in another app on your iPad that can view and/or edit PDFs. Choosing "Share Document" allows you to email or AirDrop the reDraw document. This can be used to create a backup file on your computer or to send it to another iPad that has the reDraw application on it.
+Press the share icon (square with an arrow pointing up). When exporting to PDF, the "New page at marked points" switch determines whether there is one page per slide (when the switch is off) or a new page for every marked point in the slide. See the [Timeline Slider Usage](#slider-usage) section for more information on marked points. Choosing "Share PDF" allows you to email or AirDrop the PDF to recipients you specify in the new mail message dialog. Choosing "Open PDF in..." allows you to create the PDF and open it in another app on your iPad that can view and/or edit PDFs.
+
+
+To share it as reDraw document to be opened with reDraw on another iPad, use the document picker and long press on a file and choose the **Share** option or use the option to select multiple files and then press Share. See the Help option on the document picker screen for more information.
+
 
 [Table of Contents](#table-of-contents)
 

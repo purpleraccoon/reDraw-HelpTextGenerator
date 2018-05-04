@@ -2,13 +2,29 @@
 
 Developed by Jeremy Kemery and David Reed
 
-Version 3.0
+Version 3.1.2
 
 http://dave256apps.com/redraw
 
-Support email: [reDraw.app@gmail.com](mailto:reDraw.app@gmail.com?Subject=reDraw%20Support%20Version%203.0)
+Support email: [reDraw.app@gmail.com](mailto:reDraw.app@gmail.com?Subject=reDraw%20Support%20Version%203.1.2)
 
 * Also see the help option on the Whiteboard Canvas (the screen after opening a document that you can draw on) for help on using it.
+
+What's new in Version 3.1.2:
+
+* Minor UI tweaks
+
+What's new in Version 3.1.1:
+
+* Small UI tweaks
+
+What's new in Version 3.1:
+
+* Zooming/panning on iPad will also zoom/pan external screen.
+
+* Long press next slide button will duplicate slide and move to it. Undo will delete the duplicated slide and move back to the original slide.
+
+* Long press mark button will clear all marked points on the current slide. Undo will restore all the marked points.
 
 What's new in Version 3.0:
 
@@ -62,6 +78,8 @@ What's new in version 1.2:
 
 Documents created with reDraw version 2.0 and earlier are found by navigating to the "On My iPad" section under Locations in the left sidebar. Next, select reDraw, then select Documents, and then you may need to select Documents again. That folder contains your previously created folders and reDraw documents. See [Renaming and moving documents](#renaming-and-moving-documents) for to rename documents or how to move them to different folders.
 
+[Table of Contents](#table-of-contents)
+
 ---
 
 <a name="creating-a-new-document"></a>
@@ -72,12 +90,16 @@ If you have navigated to a folder where you can create reDraw documents such as 
 
 After pressing the + button you can choose the canvas size for the document and the app will be created in the currently select folder with the name "Note (current date)". See [Renaming and moving documents](#renaming-and-moving-documents) for to rename documents or how to move them to different folders.
 
+[Table of Contents](#table-of-contents)
+
 ---
 
 <a name="creating-a-new-folder"></a>
 #### Creating a new folder
 
 Touch a blank area of the document picker between existing documents and swipe down to see the folder icon with a plus button to create a new folder. You can also change the order of how the documents are sorted (by date, name, etc.). See [Renaming and moving documents](#renaming-and-moving-documents) for to rename documents or how to move them to different folders.
+
+[Table of Contents](#table-of-contents)
 
 ---
 
@@ -94,6 +116,8 @@ Press the Select button near the top right of the screen. Now tap on your files 
 #### Renaming and moving documents
 
 To rename a file, long press the file and choose the Rename option. To move a number of files to a different folder. Press the Select button near the top right of the screen. Now tap on your files and folders to select the files and/or folders you want to move. A second tap unselects a selected file/folder. After you selected the files/folders you want to move, press the Move button at the bottom and now select the folder to which you want to move them. Note, when moving from the On My iPad section to iCloud drive (and perhaps other cloud providers), it appears to copy them instead of moving them.
+
+[Table of Contents](#table-of-contents)
 
 ---
 
