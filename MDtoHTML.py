@@ -2,32 +2,72 @@
 import sys
 
 def main(argv):
-    mdToHTML(argv[1])
+    if len(argv) > 1:
+        mdToHTML(argv[1])
+    else:
+        mdToHTML("Testing/CanvasHelp.md")
 
 def mdToHTML(mdFileName):
 
     # open markdown file
     mdFile = open(mdFileName, 'r')
 
-    # create file for HTML output
-    # remove 'md' extension and add 'html'
-    htmlFileName = mdFileName[:-2] + "html"
-
-    # open HTML file for writing
-    htmlFile = open(htmlFileName, 'w')
-
     # TODO: generate HTML file
+    TITLE = ["#", "##"]
+    LIST = ["*"]
 
-    lineCount = 0
+    htmlText = []
+    bootstrapText = []
 
-    # iterate over each line of the Mark Down file
+    introduction = True
+    tocSectionTitles = []
+
+    sectionLines = []
+    listLines = []
+
     for line in mdFile:
-        lineCount += 1
-        print(lineCount, line, file=htmlFile)
+        words = line.split()
+        # check if line is blank
+        if len(words) > 1:
+            # check if line is a section title
+            if words[0] in TITLE:
+                if not introduction:
+                    sectionFrom(sectionLines)
+                    tocSectionTitles.append(words[1:])
+                sectionLines = [words[1:]]
 
-    # close files
+            else:
+                # add line to section
+                sectionLines.append(line)
+
+    # create file for HTML output
+    # remove '.md' extension and add '.html'
+    htmlFileName = mdFileName[:-3] + ".html"
+    writeHTMLFile("\n".join(htmlText), htmlFileName)
+
+    bootstrapFileName = mdFileName[:-3] + "Bootstrap.html"
+    writeHTMLFile("\n".join(bootstrapText), bootstrapFileName)
+
+    # close file
     mdFile.close()
+
+def writeHTMLFile(text, fileName):
+    # open HTML file for writing
+    htmlFile = open(fileName, 'w')
+
+    # write out file
+    print(text, file=htmlFile)
+
+    # close file
     htmlFile.close()
+
+def sectionFrom(lines):
+    # TODO: section head
+    for line in lines:
+        # TODO: process each line
+        pass
+    # TODO: section tail
+
 
 
 if __name__ == '__main__':
