@@ -1,0 +1,53 @@
+bottom of HEAD section
+
+    <style>
+        .glyphicon {
+            padding-right: 9px;
+            display: none;
+        }
+    </style>
+    <script>
+        $(function () {
+            $('#accordion').on('shown.bs.collapse', '.panel-default', function (e) {
+                $('html,body').animate({
+                    scrollTop: $(this).offset().top
+                }, 300);
+            });
+            $('.panel-heading').on('click', function () {
+                $($(this).data('target')).collapse('toggle');
+            });
+        });
+    </script>
+
+
+TITLE in BODY
+
+
+
+
+first pass, make array of sections (aka panels)
+
+
+
+panel template idea
+
+ <div class="panel panel-default">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#panel_@@(#)">
+                <h4 class="panel-title">@@(title)</h4>
+            </div>
+            <div id="panel_@@(#)" class="panel-collapse collapse">
+                <div class="panel-body">
+
+                @@(panel_#_body) # CONVERT MD BODY STUFF TO HTML BODY STUFF
+
+
+then you need to replace all MD SECTION LINKS ex. [Settings](#settings)
+
+with something like this (assuming Settings is panel_99 FOR EXAMPLE)
+
+<a data-toggle="collapse" data-parent="#accordion" href="#panel_99">Settings</a>
+
+
+                </div>
+            </div>
+        </div>

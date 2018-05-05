@@ -1,0 +1,33 @@
+
+
+
+#### h4 (old section for reDraw)
+## h2 (new section standard)
+
+###  old app title (h3?)
+#    h1 app title
+
+
+### h3 for version numbers
+
+
+--- end of section
+
+
+**bold** (maybe for <code>tag too?)
+*italic*
+$$
+!==>"..." (maybe for <code>tag too?...like SLIDE X OF Y)...CANT DO, NOT UNIQUE...
+	use $...$ for a code phrase like SLIDE X OF Y
+"..." NORMAL ENGLISH
+
+* underordered list item
+{0}. ordered list item
+
+_underline_
+
+>> hyperlink example
+[Settings](#settings)
+
+Cmd.../  (<kbd> tag?)
+
