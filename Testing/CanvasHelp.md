@@ -115,7 +115,6 @@ The **Shift** button affects how a number of tools work. As mentioned in the [Pe
 
 ---
 
-<a name="pen/line/rect-styles"></a>
 ## Pen/Line/Rect Styles
 
 There are six styles (the 6 circular buttons below the **Shift** button) that control the color and thickness when drawing with the **Pen**, **Line**, or **Rect** tool. You may change the color/thickness for any of these six styles by pressing and holding on one of the buttons. After a long tap on one of the six style buttons, a window appears that allows you to change the thickness and color using sliders. After you've changed the color/thickness, tap outside the window to make it disappear. Note that these six styles are saved with the document so different documents may have different styles stored with them. The white style can be used with the **Pen** or **Line** tool to erase part of an object by drawing over top of it. If you want to erase an entire object, delete it using the delete button (see [Deleting/Erasing](#deleting/erasing)).
