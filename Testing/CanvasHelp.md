@@ -4,7 +4,7 @@ Developed by David Reed and Jeremy Kemery
 
 Version 3.1.2
 
-http://dave256apps.com/redraw
+[About reDraw](http://dave256apps.com/redraw)
 
 Support email: [reDraw.app@gmail.com](mailto:reDraw.app@gmail.com?Subject=reDraw%20Support%20Version%203.1.2)
 
@@ -38,13 +38,13 @@ Support email: [reDraw.app@gmail.com](mailto:reDraw.app@gmail.com?Subject=reDraw
 
 * Full screen option in navigation bar.
 
-* Share icon in navigation bar has record option. See [Recording](#recording) help.
+* Share icon in navigation bar has record option. See [Recording](#Recording) help.
 
 ### What's new in version 1.2:
 
 * Added a button in navigation bar (between + button for new slide and settings gear button) to expand the slide canvas. It hides the left bar and the the buttons/sliders above the canvas. Press it again to shrink the slide canvas and restore those views.
 
-* Pressing Cmd-/ on an externally connected keyboard will create a text drawable below the bottom item on the current slide no matter what drawing tool is currently selected.
+* Pressing @Cmd-/@ on an externally connected keyboard will create a text drawable below the bottom item on the current slide no matter what drawing tool is currently selected.
 
 * Added Previous/Next slide buttons on either side of slide number button. Pressing the slide number displays a view for picking any slide.
 
@@ -68,12 +68,12 @@ The **Text** tool allows you to type text using the software virtual keyboard or
 
 While editing text with an external keyboard the following keyboard shortcuts may be used:
 
-* Cmd-/ (end editing of the text)
-* Cmd-Opt-/ (end editing of the text, set a stop point, and begin editing a new text object immediately below it)
-* Cmd-Opt-Shift-/ (end editing of the text, do NOT set a stop point, and begin editing a new text object immediately below it)
-* If you are not currently editing text, pressing Cmd-/ creates a new text object below the bottom object on the screen.
+* @Cmd-/@ (end editing of the text)
+* @Cmd-Opt-/@ (end editing of the text, set a stop point, and begin editing a new text object immediately below it)
+* @Cmd-Opt-Shift-/@ (end editing of the text, do NOT set a stop point, and begin editing a new text object immediately below it)
+* If you are not currently editing text, pressing @Cmd-/@ creates a new text object below the bottom object on the screen.
 
-See the [Settings](#settings) for how to change the font size for the Text.
+See the [Settings](#Settings) for how to change the font size for the Text.
 
 ---
 
@@ -85,9 +85,9 @@ Just about every operation can be undone. Pressing the **Undo** button near the 
 
 ## Deleting/Erasing
 
-You can delete the most recently drawn *drawable* object by pressing the delete button in the bottom left corner of the screen. You may move the timeline to change which object is the most recently drawn *drawable* affecting which one the delete button will delete. You may also use the Erase button in the top bar of the screen to delete multiple objects. It has options for the entire slide, from the current timeline position to the beginning or end of slide, or to the previous or next mark point. See [Slider Usage](#slider-usage) for more information about mark points.
+You can delete the most recently drawn *drawable* object by pressing the delete button in the bottom left corner of the screen. You may move the timeline to change which object is the most recently drawn *drawable* affecting which one the delete button will delete. You may also use the Erase button in the top bar of the screen to delete multiple objects. It has options for the entire slide, from the current timeline position to the beginning or end of slide, or to the previous or next mark point. See [Slider Usage](#Timeline Slider Usage) for more information about mark points.
 
-If you want to erase part of an object, draw over it using **Pen** tool with the color matching the background color of the slide (the default color is white and is not currently changeable). See [Pen/Line/Rect Styles](#pen/line/rect-styles) for how to change the style used when drawing. If you want to delete the entire object, use the delete button rather than drawing over top of it.
+If you want to erase part of an object, draw over it using **Pen** tool with the color matching the background color of the slide (the default color is white and is not currently changeable). See [Pen/Line/Rect Styles](Pen/Line/Rect Styles) for how to change the style used when drawing. If you want to delete the entire object, use the delete button rather than drawing over top of it.
 
 ---
 
@@ -103,7 +103,7 @@ After Cutting or Copying selected objects, you may Paste them at a new location 
 
 Tapping a text *drawable* allows you to Cut, Copy, Delete, or Edit the text.
 
-When non-text objects are selected, pressing one of the six style buttons see ([Pen/Line/Rect Styles](#pen/line/rect-styles)) changes the current style of the selected objects.
+When non-text objects are selected, pressing one of the six style buttons see ([Pen/Line/Rect Styles](#Pen/Line/Rect Styles)) changes the current style of the selected objects.
 
 A long press of the Select button will select all the items on the current slide.
 
@@ -111,19 +111,19 @@ A long press of the Select button will select all the items on the current slide
 
 ## Shift button
 
-The **Shift** button affects how a number of tools work. As mentioned in the [Pen/Line/Rect Styles](#pen/line/rect-styles) section, when the **Shift** button is active, lines are limited to horizontal or vertical lines and rectangles are limited to squares. When objects are selected and the **Shift** button is active, pinching with two fingers anywhere on the canvas, resizes the selected objects. This is useful when the selected object(s) are too small to fit your fingers inside it (which will scale it even if the **Shift** button is inactive).
+The **Shift** button affects how a number of tools work. As mentioned in the [Pen/Line/Rect Styles](#Pen/Line/Rect Styles) section, when the **Shift** button is active, lines are limited to horizontal or vertical lines and rectangles are limited to squares. When objects are selected and the **Shift** button is active, pinching with two fingers anywhere on the canvas, resizes the selected objects. This is useful when the selected object(s) are too small to fit your fingers inside it (which will scale it even if the **Shift** button is inactive).
 
 ---
 
 ## Pen/Line/Rect Styles
 
-There are six styles (the 6 circular buttons below the **Shift** button) that control the color and thickness when drawing with the **Pen**, **Line**, or **Rect** tool. You may change the color/thickness for any of these six styles by pressing and holding on one of the buttons. After a long tap on one of the six style buttons, a window appears that allows you to change the thickness and color using sliders. After you've changed the color/thickness, tap outside the window to make it disappear. Note that these six styles are saved with the document so different documents may have different styles stored with them. The white style can be used with the **Pen** or **Line** tool to erase part of an object by drawing over top of it. If you want to erase an entire object, delete it using the delete button (see [Deleting/Erasing](#deleting/erasing)).
+There are six styles (the 6 circular buttons below the **Shift** button) that control the color and thickness when drawing with the **Pen**, **Line**, or **Rect** tool. You may change the color/thickness for any of these six styles by pressing and holding on one of the buttons. After a long tap on one of the six style buttons, a window appears that allows you to change the thickness and color using sliders. After you've changed the color/thickness, tap outside the window to make it disappear. Note that these six styles are saved with the document so different documents may have different styles stored with them. The white style can be used with the **Pen** or **Line** tool to erase part of an object by drawing over top of it. If you want to erase an entire object, delete it using the delete button (see [Deleting/Erasing](#Deleting/Erasing)).
 
 ---
 
 ## Pointer/Cursor
 
-See the [Settings](#settings) for how to make a pointer/cursor appear for pointing parts of the canvas out to people viewing a presentation with reDraw.
+See the [Settings](#Settings) for how to make a pointer/cursor appear for pointing parts of the canvas out to people viewing a presentation with reDraw.
 
 ---
 
@@ -139,7 +139,7 @@ If the app displaying an image supports dragging images out of it (such as Safar
 
 Once you've copied an image and are back on the slide in your reDraw document, make the **Select** tool active, and tap on the canvas and choose Paste.
 
-You may choose to set a selected image as the background image for the current page (using the Set Slide Background Image option) or for all the pages in the document (using the Set Default Slide Background Image). See the [Settings](#settings) section for how to delete a background image.
+You may choose to set a selected image as the background image for the current page (using the Set Slide Background Image option) or for all the pages in the document (using the Set Default Slide Background Image). See the [Settings](#Settings) section for how to delete a background image.
 
 Selected images may be resized by using two fingers to pinch/stretch the image.
 
@@ -149,7 +149,7 @@ Selected images may be resized by using two fingers to pinch/stretch the image.
 
 In version 3.0 and higher, you may drag a PDF from the Files app onto a slide to import a PDF and choose how many slides per PDF page to import.
 
-You may also use the previous method for importing a PDF. Launch the app containing the PDF (such as GoodReader, PDF Expert, etc.). From that app, choose the option to share it, then choose the option to Open In, and select "Copy to reDraw". This will switch to the reDraw app. If a document is already open, you are given the option to "Delete PDF", "Import into different document", or "Import into this document". If a document is not already open, select the document into which you want to import the PDF or create a new document; the previously mentioned three options will be shown. If you do not want to import the PDF into any document, choose "Delete PDF". If you want to import the PDF into a different document, choose that option; this will close the current document and then you can select the document you want to use. Once you have opened the document into which you want to import the PDF, choose the option to "Import into this document." You may also choose how many slides you want per PDF page. This is useful if you are importing a letter size PDF into a landscape document and want two sliders per PDF so you can show the top of the page on one slide and the bottom of the page on the next slide. It will import at the largest resolution that maintains the aspect ratio. If you import a letter size PDF into a 16:9 or 4:3 reDraw document, you will likely want to use the option to duplicate a slide and make multiple copies of each page or use the option to import multiple slides per page. Once you've done that, you can select the PDF object on a slide by using the "Select" tool and then tapping the PDF. Once it is selected you can pinch/zoom and drag the PDF page until you get the portion you want visible on that slide. Repeat the process for the other slides.
+You may also use the previous method for importing a PDF. Launch the app containing the PDF (such as GoodReader, PDF Expert, etc.). From that app, choose the option to share it, then choose the option to Open In, and select $Copy to reDraw$. This will switch to the reDraw app. If a document is already open, you are given the option to $Delete PDF$, $Import into different document$, or $Import into this document$. If a document is not already open, select the document into which you want to import the PDF or create a new document; the previously mentioned three options will be shown. If you do not want to import the PDF into any document, choose $Delete PDF$. If you want to import the PDF into a different document, choose that option; this will close the current document and then you can select the document you want to use. Once you have opened the document into which you want to import the PDF, choose the option to $Import into this document.$ You may also choose how many slides you want per PDF page. This is useful if you are importing a letter size PDF into a landscape document and want two sliders per PDF so you can show the top of the page on one slide and the bottom of the page on the next slide. It will import at the largest resolution that maintains the aspect ratio. If you import a letter size PDF into a 16:9 or 4:3 reDraw document, you will likely want to use the option to duplicate a slide and make multiple copies of each page or use the option to import multiple slides per page. Once you've done that, you can select the PDF object on a slide by using the $Select$ tool and then tapping the PDF. Once it is selected you can pinch/zoom and drag the PDF page until you get the portion you want visible on that slide. Repeat the process for the other slides.
 
 After you have each PDF page scaled the way you want, you can use the pen, line, etc. tools to write on top of the PDF.
 
@@ -177,13 +177,13 @@ Except when objects are selected and the **Shift** button is active, use two fin
 
 Pressing the Settings button (gear icon near the top right of the screen) displays a Settings window. Tap outside the Settings window or press its **Done** button to make it disappear.
 
-The Drawing Mode setting affects what touches in the canvas do. When in Pencil mode, only the pencil can be used to draw objects. A single finger will display a red circle for pointing objects out on the canvas except if you are in **Select** mode in which case a finger can be used to select objects or paste previously selected objects. In Finger mode, a single finger is used to draw objects. In Cursor mode, the finger or a pencil touch will draw the pointer circle. For all three modes, two fingers are used to pan or zoom (see [Zooming and Panning](#zooming-and-panning)).
+The Drawing Mode setting affects what touches in the canvas do. When in Pencil mode, only the pencil can be used to draw objects. A single finger will display a red circle for pointing objects out on the canvas except if you are in **Select** mode in which case a finger can be used to select objects or paste previously selected objects. In Finger mode, a single finger is used to draw objects. In Cursor mode, the finger or a pencil touch will draw the pointer circle. For all three modes, two fingers are used to pan or zoom (see [Zooming and Panning](#Zooming and Panning)).
 
 The Grid Mode affects whether Lines (but not free form drawing in **Pen** mode), Rectangles, Text, and images snap to the nearest grid point. This is useful for lining up rectangles and snapping line endpoints to other lines or rectangles. Changing the grid size does not move existing objects so it is recommended that you pick a grid size for a document and do not change it once you've started drawing objects in the document.
 
 The Mirror Display setting allows you to control what is seen on an external display (either an AirPlay screen or using the lightning adapter to connect an external monitor or projector). When Mirror Display setting is off, only the canvas is shown on the external screen (typically what you want for presenting a document). When the Mirror Display setting is on, the external monitor display matches the iPad screen. This is useful for demoing the app or necessary if you want to use multitasking to display two different apps side by side on the external screen. Note when using the iOS AirPlay option, you must select the AirPlay device you want the object to appear on and you must turn mirroring on in the AirPlay menu otherwise nothing will appear on the AirPlay device. You can then choose the option to mirror the display or just show the canvas using the reDraw Settings option to mirror the display.
 
-If you have set a background image (see [Adding images and background images](#adding-images-and-background-images)), the options to clear this slide's background image or the entire document's background image are active and may be pressed to delete the background image.
+If you have set a background image (see [Adding images and background images](#Adding images and background images)), the options to clear this slide's background image or the entire document's background image are active and may be pressed to delete the background image.
 
 The Text Size affects the font for new text objects. You may also edit an existing text object, and open the Settings icon and use it to change the font size for that text object.
 
@@ -193,13 +193,13 @@ The Settings are not saved with a document and do not change when you open a dif
 
 ## External screen
 
-Connecting an external screen either via AirPlay or an external monitor/projector via a lightning adapter allows you to present your document. See the [Settings](#settings) section for mirroring options. When creating your document, it is recommended that you match the size or at least the aspect ratio of the external screen size you plan to use to avoid black bars on the sides or top/bottom that are necessary to preserve the aspect ratio.
+Connecting an external screen either via AirPlay or an external monitor/projector via a lightning adapter allows you to present your document. See the [Settings](#Settings) section for mirroring options. When creating your document, it is recommended that you match the size or at least the aspect ratio of the external screen size you plan to use to avoid black bars on the sides or top/bottom that are necessary to preserve the aspect ratio.
 
 ---
 
 ## Pointer/Cursor
 
-See the [Settings](#settings) section for how to point out objects on an external screen without drawing as you point them out.
+See the [Settings](#Settings) section for how to point out objects on an external screen without drawing as you point them out.
 
 ---
 
@@ -210,21 +210,21 @@ Close the document and use the file picker to rename it. Long press the document
 ---
 
 ## Reordering slides
-Press the button labelled "Slide x of y" in the middle below the slider to bring up a window that allows to select a different slide. Tap and hold a slide until it turns blue AND expands in size and then drag it to the position you want it among the other slides.
+Press the button labelled $Slide x of y$ in the middle below the slider to bring up a window that allows to select a different slide. Tap and hold a slide until it turns blue AND expands in size and then drag it to the position you want it among the other slides.
 
 ---
 
 ## Selecting/Duplicating a slide
 
-Press the button labeled "Slide x of y" in the middle below the slider to bring up a window that allows you to select a different slide. Tap the slide that you want to change to. Press the Edit button to delete or duplicate slides. After selecting one or more slides (selected slides are outlined in blue), press double rectangle with a plus button to duplicate these slides or press the trash can icon to delete those slides. Press the + button to add a new slide.
+Press the button labeled $Slide x of y$ in the middle below the slider to bring up a window that allows you to select a different slide. Tap the slide that you want to change to. Press the Edit button to delete or duplicate slides. After selecting one or more slides (selected slides are outlined in blue), press double rectangle with a plus button to duplicate these slides or press the trash can icon to delete those slides. Press the + button to add a new slide.
 
 Press the arrow buttons on either side of the button labeled $Slide x of y$ to move to the previous/next slide. Long pressing the next slide button will duplicate the current slide and move to it.
 
 ---
 
-#### Exporting as PDF and Sharing a reDraw document
+## Exporting as PDF and Sharing a reDraw document
 
-Press the share icon (square with an arrow pointing up). When exporting to PDF, the "New page at marked points" switch determines whether there is one page per slide (when the switch is off) or a new page for every marked point in the slide. See the [Timeline Slider Usage](#slider-usage) section for more information on marked points. Choosing "Share PDF" allows you to email or AirDrop the PDF to recipients you specify in the new mail message dialog. Choosing "Open PDF in..." allows you to create the PDF and open it in another app on your iPad that can view and/or edit PDFs.
+Press the share icon (square with an arrow pointing up). When exporting to PDF, the $New page at marked points$ switch determines whether there is one page per slide (when the switch is off) or a new page for every marked point in the slide. See the [Timeline Slider Usage](#Timeline Slider Usage) section for more information on marked points. Choosing $Share PDF$ allows you to email or AirDrop the PDF to recipients you specify in the new mail message dialog. Choosing $Open PDF in...$ allows you to create the PDF and open it in another app on your iPad that can view and/or edit PDFs.
 
 
 To share it as reDraw document to be opened with reDraw on another iPad, use the document picker and long press on a file and choose the **Share** option or use the option to select multiple files and then press Share. See the Help option on the document picker screen for more information.
@@ -233,7 +233,7 @@ To share it as reDraw document to be opened with reDraw on another iPad, use the
 
 ## Starting a presentation
 
-Press the play button (just to the left of the Help button in the top right of the screen) to navigate to the beginning of the document to begin a presentation. Then use the next mark point button to step through your presentation. See [Timeline Slider Usage](#slider-usage) for details on mark points.
+Press the play button (just to the left of the Help button in the top right of the screen) to navigate to the beginning of the document to begin a presentation. Then use the next mark point button to step through your presentation. See [Timeline Slider Usage](#Timeline Slider Usage) for details on mark points.
 
 ----
 
@@ -241,7 +241,7 @@ Press the play button (just to the left of the Help button in the top right of t
 
 There are different techniques you can use to record a reDraw presentation. Starting with version 2.0, reDraw now supports recording directly on the iPad from within the app using Apple's ReplayKit framework. Note, due to iPad hardware limitations you cannot connect to an external display/projector using the Lightning to VGA or Lightning to HDMI adapters or use AirPlay at the same time as you are recording. Open your document, and choose the Share icon in the top navigation bar. An overlay view appears on top of your canvas (but the overlay window will not be in the recording). The overlay window can be moved by touching the gray portion at the top of the window and dragging it to the desired location.
 
-Press the **Rec** button. A dialog requesting permission to record your screen and microphone (or the screen only) will appear (unless you had recently granted permission). If you only want to record the screen, choose the "Record Screen Only" option. If you want to record your voice along with the screen choose the "Record Screen & Microphone" option. You may use the built in microphone of the iPad or if you use Apple's lightning to USB adapter, you may be able to use a USB microphone. The developers have tested this and it works using their microphone if you also plug in a lightning cable to the adapter to supply power.
+Press the **Rec** button. A dialog requesting permission to record your screen and microphone (or the screen only) will appear (unless you had recently granted permission). If you only want to record the screen, choose the $Record Screen Only$ option. If you want to record your voice along with the screen choose the $Record Screen & Microphone$ option. You may use the built in microphone of the iPad or if you use Apple's lightning to USB adapter, you may be able to use a USB microphone. The developers have tested this and it works using their microphone if you also plug in a lightning cable to the adapter to supply power.
 
 Unfortunately, ReplayKit does not always start recording immediately (usually it doesn't the first time you try to record during a session in our experience). We believe this is a bug and have reported it to Apple. But for now, if the recording has not immediately  we show another dialog letting you know this. Usually once you touch a button on the screen it does start recording so pressing the Ok button to dismiss the dialog starts the recording. You can tell that recording has started since the top of the overlay window will change from gray to red while it is recording. 
 
