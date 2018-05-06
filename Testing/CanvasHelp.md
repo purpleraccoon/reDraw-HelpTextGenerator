@@ -218,7 +218,7 @@ Press the button labelled "Slide x of y" in the middle below the slider to bring
 
 Press the button labeled "Slide x of y" in the middle below the slider to bring up a window that allows you to select a different slide. Tap the slide that you want to change to. Press the Edit button to delete or duplicate slides. After selecting one or more slides (selected slides are outlined in blue), press double rectangle with a plus button to duplicate these slides or press the trash can icon to delete those slides. Press the + button to add a new slide.
 
-Press the arrow buttons on either side of the button labeled "Slide x of y" to move to the previous/next slide. Long pressing the next slide button will duplicate the current slide and move to it.
+Press the arrow buttons on either side of the button labeled $Slide x of y$ to move to the previous/next slide. Long pressing the next slide button will duplicate the current slide and move to it.
 
 ---
 
