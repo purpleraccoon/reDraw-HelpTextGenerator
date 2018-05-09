@@ -48,8 +48,7 @@ def mdToHTML(mdFileName):
 	for index, section in enumerate(sections):
 		# panel head
 		print(linePadding(2) + "<div class='panel panel-default'>", file=htmlFile)
-		print(linePadding(
-			3) + "<div class='panel-heading' data-toggle='collapse' data-parent='#accordion' href='#panel_{0}'>".format(index), file=htmlFile)
+		print(linePadding(3) + "<div class='panel-heading' data-toggle='collapse' data-parent='#accordion' href='#panel_{0}'>".format(index), file=htmlFile)
 		print(linePadding(4) + "<h4 class='panel-title'>{0}</h4>".format(section[0]), file=htmlFile)
 		print(linePadding(3) + "</div>", file=htmlFile)
 		print(linePadding(3) + "<div id='panel_{0}' class='panel-collapse collapse{1}'>".format(index, " in" if index == 0 else ""), file=htmlFile)
