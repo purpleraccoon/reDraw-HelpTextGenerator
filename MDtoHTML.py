@@ -32,8 +32,9 @@ def mdToHTML(mdFileName):
 				# add line to section
 				sectionLines.append(line)
 
-	# write HTML
-	htmlFile = open("Testing/CanvasHelp.html", 'w')
+	# Write HTML
+	htmlFileName = mdFileName[:-2] + "html"
+	htmlFile = open(htmlFileName, 'w')
 
 	# HTML Header
 	print("<!DOCTYPE html>", file=htmlFile)
