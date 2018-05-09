@@ -122,21 +122,20 @@ def parseSectionBody(line, sections):
 	return line
 
 def parseSectionBodyLineForHyperlinks(line, sections):
-	returnVal = line
-	matchObj = re.match( r'(.*)\[(.*?)\]\(\#([a-zA-Z0-9-\/]*)\)(.*)', line, re.M|re.I)
+	matchObj = re.match( r'(.*)\[(.*?)\]\(\#([a-zA-Z0-9-\/-\_]*)\)(.*)', line, re.M|re.I)
 	if matchObj:
-		a = findPanelId(matchObj.group(3), sections)
+		a = findPanelId(matchObj.group(3).replace("_", " "), sections)
 		if a:
-			returnVal = matchObj.group(1) + "<a data-toggle='collapse' data-parent='#accordion' href='#" + a + "'>" + matchObj.group(2) + "</a>" + matchObj.group(4)
+			line = matchObj.group(1) + "<a data-toggle='collapse' data-parent='#accordion' href='#" + a + "'>" + matchObj.group(2) + "</a>" + matchObj.group(4)
 		else:
-			returnVal = matchObj.group(1) + "<b><i>UNKNOWN LINK[" + matchObj.group(2) + "]</i></b>" + matchObj.group(4)
+			line = matchObj.group(1) + "<b><i>UNKNOWN LINK[" + matchObj.group(2) + "]</i></b>" + matchObj.group(4)
 	else:
 		matchObj = re.match( r'(.*)\[(.*?)\]\((.*)\)(.*)', line, re.M|re.I)
 		if matchObj:
 			#returnVal = matchObj.group(1) + "<a href='" + matchObj.group(3) + "'>" + matchObj.group(2) + "</a>" + matchObj.group(4)
-			returnVal = "{0}<a href='{1}'>{2}</a>{3}".format(matchObj.group(1), matchObj.group(3), matchObj.group(2), matchObj.group(4))
+			line = "{0}<a href='{1}'>{2}</a>{3}".format(matchObj.group(1), matchObj.group(3), matchObj.group(2), matchObj.group(4))
 	
-	return returnVal
+	return line
 
 def parseSectionBodyLineForFormatting(line, terminator, tagname):
 	pattern = r'(.*)' + terminator + '(.*?)' + terminator + '(.*)'

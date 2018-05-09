@@ -85,7 +85,7 @@ Just about every operation can be undone. Pressing the **Undo** button near the 
 
 ## Deleting/Erasing
 
-You can delete the most recently drawn *drawable* object by pressing the delete button in the bottom left corner of the screen. You may move the timeline to change which object is the most recently drawn *drawable* affecting which one the delete button will delete. You may also use the Erase button in the top bar of the screen to delete multiple objects. It has options for the entire slide, from the current timeline position to the beginning or end of slide, or to the previous or next mark point. See [Slider Usage](#Timeline Slider Usage) for more information about mark points.
+You can delete the most recently drawn *drawable* object by pressing the delete button in the bottom left corner of the screen. You may move the timeline to change which object is the most recently drawn *drawable* affecting which one the delete button will delete. You may also use the Erase button in the top bar of the screen to delete multiple objects. It has options for the entire slide, from the current timeline position to the beginning or end of slide, or to the previous or next mark point. See [Slider Usage](#Timeline_Slider_Usage) for more information about mark points.
 
 If you want to erase part of an object, draw over it using **Pen** tool with the color matching the background color of the slide (the default color is white and is not currently changeable). See [Pen/Line/Rect Styles](Pen/Line/Rect Styles) for how to change the style used when drawing. If you want to delete the entire object, use the delete button rather than drawing over top of it.
 
@@ -103,7 +103,7 @@ After Cutting or Copying selected objects, you may Paste them at a new location 
 
 Tapping a text *drawable* allows you to Cut, Copy, Delete, or Edit the text.
 
-When non-text objects are selected, pressing one of the six style buttons see ([Pen/Line/Rect Styles](#Pen/Line/Rect Styles)) changes the current style of the selected objects.
+When non-text objects are selected, pressing one of the six style buttons see ([Pen/Line/Rect Styles](#Pen/Line/Rect_Styles)) changes the current style of the selected objects.
 
 A long press of the Select button will select all the items on the current slide.
 
@@ -111,7 +111,7 @@ A long press of the Select button will select all the items on the current slide
 
 ## Shift button
 
-The **Shift** button affects how a number of tools work. As mentioned in the [Pen/Line/Rect Styles](#Pen/Line/Rect Styles) section, when the **Shift** button is active, lines are limited to horizontal or vertical lines and rectangles are limited to squares. When objects are selected and the **Shift** button is active, pinching with two fingers anywhere on the canvas, resizes the selected objects. This is useful when the selected object(s) are too small to fit your fingers inside it (which will scale it even if the **Shift** button is inactive).
+The **Shift** button affects how a number of tools work. As mentioned in the [Pen/Line/Rect Styles](#Pen/Line/Rect_Styles) section, when the **Shift** button is active, lines are limited to horizontal or vertical lines and rectangles are limited to squares. When objects are selected and the **Shift** button is active, pinching with two fingers anywhere on the canvas, resizes the selected objects. This is useful when the selected object(s) are too small to fit your fingers inside it (which will scale it even if the **Shift** button is inactive).
 
 ---
 
@@ -177,13 +177,13 @@ Except when objects are selected and the **Shift** button is active, use two fin
 
 Pressing the Settings button (gear icon near the top right of the screen) displays a Settings window. Tap outside the Settings window or press its **Done** button to make it disappear.
 
-The Drawing Mode setting affects what touches in the canvas do. When in Pencil mode, only the pencil can be used to draw objects. A single finger will display a red circle for pointing objects out on the canvas except if you are in **Select** mode in which case a finger can be used to select objects or paste previously selected objects. In Finger mode, a single finger is used to draw objects. In Cursor mode, the finger or a pencil touch will draw the pointer circle. For all three modes, two fingers are used to pan or zoom (see [Zooming and Panning](#Zooming and Panning)).
+The Drawing Mode setting affects what touches in the canvas do. When in Pencil mode, only the pencil can be used to draw objects. A single finger will display a red circle for pointing objects out on the canvas except if you are in **Select** mode in which case a finger can be used to select objects or paste previously selected objects. In Finger mode, a single finger is used to draw objects. In Cursor mode, the finger or a pencil touch will draw the pointer circle. For all three modes, two fingers are used to pan or zoom (see [Zooming and Panning](#Zooming_and_Panning)).
 
 The Grid Mode affects whether Lines (but not free form drawing in **Pen** mode), Rectangles, Text, and images snap to the nearest grid point. This is useful for lining up rectangles and snapping line endpoints to other lines or rectangles. Changing the grid size does not move existing objects so it is recommended that you pick a grid size for a document and do not change it once you've started drawing objects in the document.
 
 The Mirror Display setting allows you to control what is seen on an external display (either an AirPlay screen or using the lightning adapter to connect an external monitor or projector). When Mirror Display setting is off, only the canvas is shown on the external screen (typically what you want for presenting a document). When the Mirror Display setting is on, the external monitor display matches the iPad screen. This is useful for demoing the app or necessary if you want to use multitasking to display two different apps side by side on the external screen. Note when using the iOS AirPlay option, you must select the AirPlay device you want the object to appear on and you must turn mirroring on in the AirPlay menu otherwise nothing will appear on the AirPlay device. You can then choose the option to mirror the display or just show the canvas using the reDraw Settings option to mirror the display.
 
-If you have set a background image (see [Adding images and background images](#Adding images and background images)), the options to clear this slide's background image or the entire document's background image are active and may be pressed to delete the background image.
+If you have set a background image (see [Adding images and background images](#Adding_images_and_background_images)), the options to clear this slide's background image or the entire document's background image are active and may be pressed to delete the background image.
 
 The Text Size affects the font for new text objects. You may also edit an existing text object, and open the Settings icon and use it to change the font size for that text object.
 
@@ -224,7 +224,7 @@ Press the arrow buttons on either side of the button labeled $Slide x of y$ to m
 
 ## Exporting as PDF and Sharing a reDraw document
 
-Press the share icon (square with an arrow pointing up). When exporting to PDF, the $New page at marked points$ switch determines whether there is one page per slide (when the switch is off) or a new page for every marked point in the slide. See the [Timeline Slider Usage](#Timeline Slider Usage) section for more information on marked points. Choosing $Share PDF$ allows you to email or AirDrop the PDF to recipients you specify in the new mail message dialog. Choosing $Open PDF in...$ allows you to create the PDF and open it in another app on your iPad that can view and/or edit PDFs.
+Press the share icon (square with an arrow pointing up). When exporting to PDF, the $New page at marked points$ switch determines whether there is one page per slide (when the switch is off) or a new page for every marked point in the slide. See the [Timeline Slider Usage](#Timeline_Slider_Usage) section for more information on marked points. Choosing $Share PDF$ allows you to email or AirDrop the PDF to recipients you specify in the new mail message dialog. Choosing $Open PDF in...$ allows you to create the PDF and open it in another app on your iPad that can view and/or edit PDFs.
 
 
 To share it as reDraw document to be opened with reDraw on another iPad, use the document picker and long press on a file and choose the **Share** option or use the option to select multiple files and then press Share. See the Help option on the document picker screen for more information.
@@ -233,7 +233,7 @@ To share it as reDraw document to be opened with reDraw on another iPad, use the
 
 ## Starting a presentation
 
-Press the play button (just to the left of the Help button in the top right of the screen) to navigate to the beginning of the document to begin a presentation. Then use the next mark point button to step through your presentation. See [Timeline Slider Usage](#Timeline Slider Usage) for details on mark points.
+Press the play button (just to the left of the Help button in the top right of the screen) to navigate to the beginning of the document to begin a presentation. Then use the next mark point button to step through your presentation. See [Timeline Slider Usage](#Timeline_Slider_Usage) for details on mark points.
 
 ----
 
