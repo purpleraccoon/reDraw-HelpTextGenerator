@@ -44,37 +44,54 @@ def mdToHTML(mdFileName):
 	# HTML Body
 	print("<body>", file=htmlFile)
 	print(padLine(1) + "<div class='panel-group' id='accordion'>", file=htmlFile)
-	bInList = False
-	for i, s in enumerate(sections):
-		print(padLine(2) + "<div class='panel panel-default'>", file=htmlFile)
-		print(padLine(3) + "<div class='panel-heading' data-toggle='collapse' data-parent='#accordion' href='#panel_{0}'>".format(i), file=htmlFile)
-		print(padLine(4) + "<h4 class='panel-title'>{0}</h4>".format(s[0]), file=htmlFile)
-		print(padLine(3) + "</div>", file=htmlFile)
-		print(padLine(3) + "<div id='panel_{0}' class='panel-collapse collapse'>".format(i), file=htmlFile)
-		print(padLine(4) + "<div class='panel-body'>", file=htmlFile)
-		
-		for l in s[1:]:
-			l = l[:-1]
-			bWasInList = bInList
-			bInList = l.startswith("* ")
-			if bWasInList and not bInList:
-				print(padLine(5) + "</ul>", file=htmlFile)
-			if not bWasInList and bInList:
-				print(padLine(5) + "<ul>", file=htmlFile)
-			lnew = parseSectionBody(l, sections)
-			if bInList:
-				lnew = padLine(6) + "<li>{0}</li>".format(lnew[2:])
-			else:
-				lnew = padLine(5) + "<p>{0}</p>".format(lnew)
-			print(lnew, file=htmlFile)
-		if bInList:
-			print(padLine(5) + "</ul>", file=htmlFile)
-			bWasInList = False
-			bInList = False
 
+	for index, section in enumerate(sections):
+		# panel head
+		print(padLine(2) + "<div class='panel panel-default'>", file=htmlFile)
+		print(padLine(3) + "<div class='panel-heading' data-toggle='collapse' data-parent='#accordion' href='#panel_{0}'>".format(index), file=htmlFile)
+		print(padLine(4) + "<h4 class='panel-title'>{0}</h4>".format(section[0]), file=htmlFile)
+		print(padLine(3) + "</div>", file=htmlFile)
+		print(padLine(3) + "<div id='panel_{0}' class='panel-collapse collapse'>".format(index), file=htmlFile)
+		print(padLine(4) + "<div class='panel-body'>", file=htmlFile)
+
+		# parse the lines in the section
+		isReadingList = False
+		wasReadingList = False
+		for line in section[1:]:
+			line = line[:-1] # remove new line char
+			wasReadingList = isReadingList
+			isReadingList = line.startswith("* ")
+
+			# close or open unordered list section accordingly
+			if not wasReadingList and isReadingList:
+				print(padLine(5) + "<ul>", file=htmlFile)
+			elif wasReadingList and not isReadingList:
+				print(padLine(5) + "</ul>", file=htmlFile)
+
+			# parse for formatting
+			line = parseSectionBody(line, sections)
+
+			# format line paragraph
+			if isReadingList:
+				line = padLine(6) + "<li>{0}</li>".format(line[2:])
+			else:
+				line = padLine(5) + "<p>{0}</p>".format(line)
+
+			# write out line
+			print(line, file=htmlFile)
+
+		# close out list if it hasn't already
+		if isReadingList:
+			print(padLine(5) + "</ul>", file=htmlFile)
+			wasReadingList = False
+			isReadingList = False
+
+		# panel closing
 		print(padLine(4) + "</div>", file=htmlFile)
 		print(padLine(3) + "</div>", file=htmlFile)
 		print(padLine(2) + "</div>", file=htmlFile)
+
+	# HTML closing
 	print(padLine(1) + "</div>", file=htmlFile)
 	print("</body>", file=htmlFile)
 	print("</html>", file=htmlFile)
