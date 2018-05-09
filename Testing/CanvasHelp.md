@@ -44,7 +44,7 @@ Support email: [reDraw.app@gmail.com](mailto:reDraw.app@gmail.com?Subject=reDraw
 
 * Added a button in navigation bar (between + button for new slide and settings gear button) to expand the slide canvas. It hides the left bar and the the buttons/sliders above the canvas. Press it again to shrink the slide canvas and restore those views.
 
-* Pressing @Cmd-/@ on an externally connected keyboard will create a text drawable below the bottom item on the current slide no matter what drawing tool is currently selected.
+* Pressing !Cmd-/! on an externally connected keyboard will create a text drawable below the bottom item on the current slide no matter what drawing tool is currently selected.
 
 * Added Previous/Next slide buttons on either side of slide number button. Pressing the slide number displays a view for picking any slide.
 
@@ -68,10 +68,10 @@ The **Text** tool allows you to type text using the software virtual keyboard or
 
 While editing text with an external keyboard the following keyboard shortcuts may be used:
 
-* @Cmd-/@ (end editing of the text)
-* @Cmd-Opt-/@ (end editing of the text, set a stop point, and begin editing a new text object immediately below it)
-* @Cmd-Opt-Shift-/@ (end editing of the text, do NOT set a stop point, and begin editing a new text object immediately below it)
-* If you are not currently editing text, pressing @Cmd-/@ creates a new text object below the bottom object on the screen.
+* !Cmd-/! (end editing of the text)
+* !Cmd-Opt-/! (end editing of the text, set a stop point, and begin editing a new text object immediately below it)
+* !Cmd-Opt-Shift-/! (end editing of the text, do NOT set a stop point, and begin editing a new text object immediately below it)
+* If you are not currently editing text, pressing !Cmd-/! creates a new text object below the bottom object on the screen.
 
 See the [Settings](#Settings) for how to change the font size for the Text.
 

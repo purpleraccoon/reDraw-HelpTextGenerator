@@ -42,33 +42,39 @@ def mdToHTML(mdFileName):
 
 	# HTML Body
 	print("<body>", file=htmlFile)
-	print("    <div class='panel-group' id='accordion'>", file=htmlFile)
+	print(padLine(1) + "<div class='panel-group' id='accordion'>", file=htmlFile)
 	bInList = False
 	for i, s in enumerate(sections):
-		print("        <div class='panel panel-default'>", file=htmlFile)
-		print("            <div class='panel-heading' data-toggle='collapse' data-parent='#accordion' href='#panel_{0}'>".format(i), file=htmlFile)
-		print("                <h4 class='panel-title'>{0}</h4>".format(s[0]), file=htmlFile)
-		print("            </div>", file=htmlFile)
-		print("            <div id='panel_{0}' class='panel-collapse collapse'>".format(i), file=htmlFile)
-		print("                <div class='panel-body'>", file=htmlFile)
+		print(padLine(2) + "<div class='panel panel-default'>", file=htmlFile)
+		print(padLine(3) + "<div class='panel-heading' data-toggle='collapse' data-parent='#accordion' href='#panel_{0}'>".format(i), file=htmlFile)
+		print(padLine(4) + "<h4 class='panel-title'>{0}</h4>".format(s[0]), file=htmlFile)
+		print(padLine(3) + "</div>", file=htmlFile)
+		print(padLine(3) + "<div id='panel_{0}' class='panel-collapse collapse'>".format(i), file=htmlFile)
+		print(padLine(4) + "<div class='panel-body'>", file=htmlFile)
+		
 		for l in s[1:]:
 			l = l[:-1]
 			bWasInList = bInList
 			bInList = l.startswith("* ")
 			if bWasInList and not bInList:
-				print("                    </ul>", file=htmlFile)
+				print(padLine(5) + "</ul>", file=htmlFile)
 			if not bWasInList and bInList:
-				print("                    <ul>", file=htmlFile)
+				print(padLine(5) + "<ul>", file=htmlFile)
 			lnew = parseSectionBody(l, sections)
 			if bInList:
-				lnew = "                        <li>{0}</li>".format(lnew[2:])
+				lnew = padLine(6) + "<li>{0}</li>".format(lnew[2:])
 			else:
-				lnew = "                        <p>{0}</p>".format(lnew)
+				lnew = padLine(5) + "<p>{0}</p>".format(lnew)
 			print(lnew, file=htmlFile)
-		print("                </div>", file=htmlFile)
-		print("            </div>", file=htmlFile)
-		print("        </div>", file=htmlFile)
-	print("    </div>", file=htmlFile)
+		if bInList:
+			print(padLine(5) + "</ul>", file=htmlFile)
+			bWasInList = False
+			bInList = False
+
+		print(padLine(4) + "</div>", file=htmlFile)
+		print(padLine(3) + "</div>", file=htmlFile)
+		print(padLine(2) + "</div>", file=htmlFile)
+	print(padLine(1) + "</div>", file=htmlFile)
 	print("</body>", file=htmlFile)
 	print("</html>", file=htmlFile)
 
@@ -81,13 +87,19 @@ def htmlHeader(htmlDst, fileHeadSrc):
 	for line in htmlHead:
 		print(line[:-1], file=htmlDst)
 
+def padLine(level):
+	retval = ""
+	for i in range(0, level):
+		retval += "    "
+	return retval
+
 def parseSectionBody(line, sections):
 	line = parseSectionBodyLineForHyperlinks(line, sections)
 	line = parseSectionBodyLineForFormatting(line, "\*\*", "strong")
 	line = parseSectionBodyLineForFormatting(line, "\*", "i")
 	line = parseSectionBodyLineForFormatting(line, "\_", "u")
 	line = parseSectionBodyLineForFormatting(line, "\$", "code")
-	#line = parseSectionBodyLineForFormatting(line, "\@", "kbd")
+	line = parseSectionBodyLineForFormatting(line, "\!", "kbd")
 	return line
 
 def parseSectionBodyLineForHyperlinks(line, sections):
@@ -102,8 +114,8 @@ def parseSectionBodyLineForHyperlinks(line, sections):
 	else:
 		matchObj = re.match( r'(.*)\[(.*?)\]\((.*)\)(.*)', line, re.M|re.I)
 		if matchObj:
-			#returnVal = "{0}<a href='{1}'>{2}</a>{3}".format(matchObj.group(1), matchObj.group(3), matchObj.group(2), matchObj.group(4))
-			returnVal = matchObj.group(1) + "<a href='" + matchObj.group(3) + "'>" + matchObj.group(2) + "</a>" + matchObj.group(4)
+			#returnVal = matchObj.group(1) + "<a href='" + matchObj.group(3) + "'>" + matchObj.group(2) + "</a>" + matchObj.group(4)
+			returnVal = "{0}<a href='{1}'>{2}</a>{3}".format(matchObj.group(1), matchObj.group(3), matchObj.group(2), matchObj.group(4))
 	
 	return returnVal
 
