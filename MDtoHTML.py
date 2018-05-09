@@ -61,6 +61,7 @@ def mdToHTML(mdFileName):
 			line = line[:-1] # remove new line char
 			wasReadingList = isReadingList
 			isReadingList = line.startswith("* ")
+			isHeader, headerLevel = lineIsHeader(line)
 
 			# close or open unordered list section accordingly
 			if not wasReadingList and isReadingList:
@@ -74,6 +75,8 @@ def mdToHTML(mdFileName):
 			# format line paragraph
 			if isReadingList:
 				line = linePadding(6) + "<li>{0}</li>".format(line[2:])
+			elif isHeader and headerLevel == 3:
+				line = linePadding(5) + "<p style='background-color: whitesmoke;'>{0}</p>".format(line[4:])
 			else:
 				line = linePadding(5) + "<p>{0}</p>".format(line)
 
@@ -99,6 +102,14 @@ def mdToHTML(mdFileName):
 	# close files
 	htmlFile.close()
 	mdFile.close()
+
+def lineIsHeader(line):
+	htags = ["#", "##", "###", "####", "#####", "######"]
+	words = line.split(" ")
+	if words[0] in htags:
+		return True, htags.index(words[0]) + 1
+	else:
+		return False, 0
 
 def addHTMLHeader(htmlFile, htmlHeaderSourceFileName):
 	htmlHeaderSourceFile = open(htmlHeaderSourceFileName, 'r')
