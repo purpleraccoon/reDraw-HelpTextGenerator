@@ -122,17 +122,24 @@ def parseSectionBody(line, sections):
 	return line
 
 def parseSectionBodyLineForHyperlinks(line, sections):
+	# looking for '[@@link name@@](#@@linked section title@@)
 	matchObj = re.match( r'(.*)\[(.*?)\]\(\#([a-zA-Z0-9-\/-\_]*)\)(.*)', line, re.M|re.I)
 	if matchObj:
+		# link to another panel
 		a = findPanelId(matchObj.group(3).replace("_", " "), sections)
 		if a:
+			# able to find matching section
 			line = matchObj.group(1) + "<a data-toggle='collapse' data-parent='#accordion' href='#" + a + "'>" + matchObj.group(2) + "</a>" + matchObj.group(4)
 		else:
+			# unable to find matching section
+			print("Unable to resolve link to section nammed", matchObj.group(2))
 			line = matchObj.group(1) + "<b><i>UNKNOWN LINK[" + matchObj.group(2) + "]</i></b>" + matchObj.group(4)
 	else:
+		# regular hyperlink
+		# looking for '[@@link name@@](#@@linked URL@@)
 		matchObj = re.match( r'(.*)\[(.*?)\]\((.*)\)(.*)', line, re.M|re.I)
 		if matchObj:
-			#returnVal = matchObj.group(1) + "<a href='" + matchObj.group(3) + "'>" + matchObj.group(2) + "</a>" + matchObj.group(4)
+			#line = matchObj.group(1) + "<a href='" + matchObj.group(3) + "'>" + matchObj.group(2) + "</a>" + matchObj.group(4)
 			line = "{0}<a href='{1}'>{2}</a>{3}".format(matchObj.group(1), matchObj.group(3), matchObj.group(2), matchObj.group(4))
 	
 	return line
@@ -140,15 +147,16 @@ def parseSectionBodyLineForHyperlinks(line, sections):
 def parseSectionBodyLineForFormatting(line, terminator, tagname):
 	pattern = r'(.*)' + terminator + '(.*?)' + terminator + '(.*)'
 	matchObj = re.match(pattern, line, re.M|re.I)
+	# while still able to find matching pattern in line
 	while matchObj:
 		line = matchObj.group(1) + "<" + tagname + ">" + matchObj.group(2) + "</" + tagname + ">" + matchObj.group(3)
 		matchObj = re.match(pattern, line, re.M|re.I)
 	return line
 
 def findPanelId(title, sections):
-	for i, s in enumerate(sections):
-		if s[0] == title:
-			return "panel_" + str(i)
+	for index, section in enumerate(sections):
+		if section[0] == title:
+			return "panel_" + str(index)
 
 if __name__ == '__main__':
 	main(sys.argv)
