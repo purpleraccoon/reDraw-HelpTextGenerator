@@ -43,16 +43,17 @@ def mdToHTML(mdFileName):
 
 	# HTML Body
 	print("<body>", file=htmlFile)
-	print(padLine(1) + "<div class='panel-group' id='accordion'>", file=htmlFile)
+	print(linePadding(1) + "<div class='panel-group' id='accordion'>", file=htmlFile)
 
 	for index, section in enumerate(sections):
 		# panel head
-		print(padLine(2) + "<div class='panel panel-default'>", file=htmlFile)
-		print(padLine(3) + "<div class='panel-heading' data-toggle='collapse' data-parent='#accordion' href='#panel_{0}'>".format(index), file=htmlFile)
-		print(padLine(4) + "<h4 class='panel-title'>{0}</h4>".format(section[0]), file=htmlFile)
-		print(padLine(3) + "</div>", file=htmlFile)
-		print(padLine(3) + "<div id='panel_{0}' class='panel-collapse collapse'>".format(index), file=htmlFile)
-		print(padLine(4) + "<div class='panel-body'>", file=htmlFile)
+		print(linePadding(2) + "<div class='panel panel-default'>", file=htmlFile)
+		print(linePadding(
+			3) + "<div class='panel-heading' data-toggle='collapse' data-parent='#accordion' href='#panel_{0}'>".format(index), file=htmlFile)
+		print(linePadding(4) + "<h4 class='panel-title'>{0}</h4>".format(section[0]), file=htmlFile)
+		print(linePadding(3) + "</div>", file=htmlFile)
+		print(linePadding(3) + "<div id='panel_{0}' class='panel-collapse collapse'>".format(index), file=htmlFile)
+		print(linePadding(4) + "<div class='panel-body'>", file=htmlFile)
 
 		# parse the lines in the section
 		isReadingList = False
@@ -64,35 +65,35 @@ def mdToHTML(mdFileName):
 
 			# close or open unordered list section accordingly
 			if not wasReadingList and isReadingList:
-				print(padLine(5) + "<ul>", file=htmlFile)
+				print(linePadding(5) + "<ul>", file=htmlFile)
 			elif wasReadingList and not isReadingList:
-				print(padLine(5) + "</ul>", file=htmlFile)
+				print(linePadding(5) + "</ul>", file=htmlFile)
 
 			# parse for formatting
 			line = parseSectionBody(line, sections)
 
 			# format line paragraph
 			if isReadingList:
-				line = padLine(6) + "<li>{0}</li>".format(line[2:])
+				line = linePadding(6) + "<li>{0}</li>".format(line[2:])
 			else:
-				line = padLine(5) + "<p>{0}</p>".format(line)
+				line = linePadding(5) + "<p>{0}</p>".format(line)
 
 			# write out line
 			print(line, file=htmlFile)
 
 		# close out list if it hasn't already
 		if isReadingList:
-			print(padLine(5) + "</ul>", file=htmlFile)
+			print(linePadding(5) + "</ul>", file=htmlFile)
 			wasReadingList = False
 			isReadingList = False
 
 		# panel closing
-		print(padLine(4) + "</div>", file=htmlFile)
-		print(padLine(3) + "</div>", file=htmlFile)
-		print(padLine(2) + "</div>", file=htmlFile)
+		print(linePadding(4) + "</div>", file=htmlFile)
+		print(linePadding(3) + "</div>", file=htmlFile)
+		print(linePadding(2) + "</div>", file=htmlFile)
 
 	# HTML closing
-	print(padLine(1) + "</div>", file=htmlFile)
+	print(linePadding(1) + "</div>", file=htmlFile)
 	print("</body>", file=htmlFile)
 	print("</html>", file=htmlFile)
 
@@ -105,11 +106,11 @@ def addHTMLHeader(htmlFile, htmlHeaderSourceFileName):
 	for line in htmlHeaderSourceFile:
 		print(line[:-1], file=htmlFile)
 
-def padLine(level):
-	retval = ""
+def linePadding(level):
+	padding = ""
 	for i in range(0, level):
-		retval += "    "
-	return retval
+		padding += "    "
+	return padding
 
 def parseSectionBody(line, sections):
 	line = parseSectionBodyLineForHyperlinks(line, sections)
