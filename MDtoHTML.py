@@ -39,7 +39,7 @@ def mdToHTML(mdFileName):
 	# HTML Header
 	print("<!DOCTYPE html>", file=htmlFile)
 	print("<html lang='en'>", file=htmlFile)
-	htmlHeader(htmlFile, "HTMLHelpDocs/Head.html")
+	addHTMLHeader(htmlFile, "HTMLHelpDocs/Head.html")
 
 	# HTML Body
 	print("<body>", file=htmlFile)
@@ -100,10 +100,10 @@ def mdToHTML(mdFileName):
 	htmlFile.close()
 	mdFile.close()
 
-def htmlHeader(htmlDst, fileHeadSrc):
-	htmlHead = open(fileHeadSrc, 'r')
-	for line in htmlHead:
-		print(line[:-1], file=htmlDst)
+def addHTMLHeader(htmlFile, htmlHeaderSourceFileName):
+	htmlHeaderSourceFile = open(htmlHeaderSourceFileName, 'r')
+	for line in htmlHeaderSourceFile:
+		print(line[:-1], file=htmlFile)
 
 def padLine(level):
 	retval = ""
