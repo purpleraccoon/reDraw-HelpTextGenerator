@@ -57,24 +57,32 @@ def mdToHTML(mdFileName):
 		# parse the lines in the section
 		isReadingList = False
 		wasReadingList = False
+		typeReadingList = ""
 		for line in section[1:]:
 			line = line[:-1] # remove new line char
 			wasReadingList = isReadingList
 			isReadingList = line.startswith("* ")
+			if isReadingList:
+				typeReadingList = "ul"
+			else:
+				matchObj = re.match( r'(\d+)(.*)', line, re.M|re.I)
+				if matchObj:
+					typeReadingList = "ol"
+					isReadingList = True
 			isHeader, headerLevel = lineIsHeader(line)
 
 			# close or open unordered list section accordingly
 			if not wasReadingList and isReadingList:
-				print(linePadding(5) + "<ul>", file=htmlFile)
+				print(linePadding(5) + "<{0}>".format(typeReadingList), file=htmlFile)
 			elif wasReadingList and not isReadingList:
-				print(linePadding(5) + "</ul>", file=htmlFile)
+				print(linePadding(5) + "</{0}>".format(typeReadingList), file=htmlFile)
 
 			# parse for formatting
 			line = parseSectionBody(line, sections)
 
 			# format line paragraph
 			if isReadingList:
-				line = linePadding(6) + "<li>{0}</li>".format(line[2:])
+				line = linePadding(6) + "<li>{0}</li>".format(line[2:].lstrip())
 			elif isHeader and headerLevel == 3:
 				line = linePadding(5) + "<p style='background-color: whitesmoke;'>{0}</p>".format(line[4:])
 			else:
@@ -85,7 +93,7 @@ def mdToHTML(mdFileName):
 
 		# close out list if it hasn't already
 		if isReadingList:
-			print(linePadding(5) + "</ul>", file=htmlFile)
+			print(linePadding(5) + "</{0}>".format(typeReadingList), file=htmlFile)
 			wasReadingList = False
 			isReadingList = False
 
