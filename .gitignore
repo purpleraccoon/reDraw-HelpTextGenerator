@@ -3,3 +3,5 @@
 /Testing/CanvasHelp.html
 /Testing/CanvasHelpBootstrap.html
 /.vs/
+*.html
+.DS_Store
