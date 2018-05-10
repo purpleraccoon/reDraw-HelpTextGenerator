@@ -41,7 +41,7 @@ def mdToHTML(mdFileName):
 	# HTML Header
 	print("<!DOCTYPE html>", file=htmlFile)
 	print("<html lang='en'>", file=htmlFile)
-	addHTMLHeader(htmlFile, "HTMLHelpDocs/Head.html")
+	addHTMLHeader(htmlFile, "Head.html")
 
 	# HTML Body
 	print("<body>", file=htmlFile)
