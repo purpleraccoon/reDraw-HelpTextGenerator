@@ -1,4 +1,6 @@
 # Mark Down to HTML converter for reDraw help documents with Bootstrap styling
+# Steve Kemery and Jeremy Kemery
+# 2018
 import sys
 import re
 
