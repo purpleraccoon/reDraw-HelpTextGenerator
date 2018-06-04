@@ -41,6 +41,9 @@ def mdToHTML(mdFileName):
 		link = title.replace(" ", "_")
 		tableOfContents.append("[{0}](#{1})\n".format(title, link))
 
+		tocLink = "[Table of Contents](#Table_of_Contents)\n"
+		section.append(tocLink)
+
 	sections.insert(1, tableOfContents)
 
 	# Write HTML
