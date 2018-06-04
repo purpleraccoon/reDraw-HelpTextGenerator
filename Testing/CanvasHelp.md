@@ -87,7 +87,7 @@ Just about every operation can be undone. Pressing the **Undo** button near the 
 
 You can delete the most recently drawn *drawable* object by pressing the delete button in the bottom left corner of the screen. You may move the timeline to change which object is the most recently drawn *drawable* affecting which one the delete button will delete. You may also use the Erase button in the top bar of the screen to delete multiple objects. It has options for the entire slide, from the current timeline position to the beginning or end of slide, or to the previous or next mark point. See [Slider Usage](#Timeline_Slider_Usage) for more information about mark points.
 
-If you want to erase part of an object, draw over it using **Pen** tool with the color matching the background color of the slide (the default color is white and is not currently changeable). See [Pen/Line/Rect Styles](Pen/Line/Rect Styles) for how to change the style used when drawing. If you want to delete the entire object, use the delete button rather than drawing over top of it.
+If you want to erase part of an object, draw over it using **Pen** tool with the color matching the background color of the slide (the default color is white and is not currently changeable). See [Pen/Line/Rect Styles](#Pen/Line/Rect_Styles) for how to change the style used when drawing. If you want to delete the entire object, use the delete button rather than drawing over top of it.
 
 ---
 
