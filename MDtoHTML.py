@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # Mark Down to HTML converter for reDraw help documents with Bootstrap styling
 # Steve Kemery and Jeremy Kemery
 # 2018
@@ -33,6 +35,8 @@ def mdToHTML(mdFileName):
 			else:
 				# add line to section
 				sectionLines.append(line)
+
+	sections.append(sectionLines)
 
 	# Insert Table Of Contents section title
 	tableOfContents = ["Table of Contents"]
