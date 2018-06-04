@@ -34,6 +34,15 @@ def mdToHTML(mdFileName):
 				# add line to section
 				sectionLines.append(line)
 
+	# Insert Table Of Contents section title
+	tableOfContents = ["Table of Contents"]
+	for section in sections:
+		title = section[0]
+		link = title.replace(" ", "_")
+		tableOfContents.append("[{0}](#{1})\n".format(title, link))
+
+	sections.insert(1, tableOfContents)
+
 	# Write HTML
 	htmlFileName = mdFileName[:-2] + "html"
 	htmlFile = open(htmlFileName, 'w')
